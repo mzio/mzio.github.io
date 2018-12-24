@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About on Michael Zhang</title>
-    <link>http://example.org/about/</link>
+    <link>https://michaelzhang.xyz/about/</link>
     <description>Recent content in About on Michael Zhang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 12 Dec 2018 17:32:04 -0500</lastBuildDate>
     
-	<atom:link href="http://example.org/about/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://michaelzhang.xyz/about/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

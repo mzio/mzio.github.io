@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Michael Zhang</title>
-    <link>http://example.org/projects/</link>
+    <link>https://michaelzhang.xyz/projects/</link>
     <description>Recent content in Projects on Michael Zhang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Dec 2018 01:37:59 +0900</lastBuildDate>
     
-	<atom:link href="http://example.org/projects/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://michaelzhang.xyz/projects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Genetic Engineering with CRISPR-Cas9 Virus-like Particles</title>
-      <link>http://example.org/projects/002-crispr_vlps/</link>
+      <link>https://michaelzhang.xyz/projects/002-crispr_vlps/</link>
       <pubDate>Tue, 25 Dec 2018 01:37:59 +0900</pubDate>
       
-      <guid>http://example.org/projects/002-crispr_vlps/</guid>
+      <guid>https://michaelzhang.xyz/projects/002-crispr_vlps/</guid>
       <description>See the paper, poster, and research plan 
 I&amp;rsquo;m not sure if anyone will ever happen to be on this site looking for resources regarding science fairs, and I definitely don&amp;rsquo;t do as much wet-lab biology as I used to, but as an homage to a past high school obsession passion I thought it&amp;rsquo;d be nice to try to remember some past work.
 Some Abstract For some introduction, CRISPR-Cas9 is an exciting gene editing technology with many hyped applications in science and medicine.</description>
@@ -24,10 +24,10 @@ Some Abstract For some introduction, CRISPR-Cas9 is an exciting gene editing tec
     
     <item>
       <title>Turbine Optimization Problem</title>
-      <link>http://example.org/projects/001-turbine_optimization/</link>
+      <link>https://michaelzhang.xyz/projects/001-turbine_optimization/</link>
       <pubDate>Sun, 15 May 2016 15:29:26 -0500</pubDate>
       
-      <guid>http://example.org/projects/001-turbine_optimization/</guid>
+      <guid>https://michaelzhang.xyz/projects/001-turbine_optimization/</guid>
       <description>Multivariable calculus was a fun time, and for a class project we were tasked with solving a Lagrange optimization problem. This was around the time I started learning about GitHub Pages and hosting websites for various club and activity-related things, so in my youthful enthusiasm I thought it&amp;rsquo;d be cool to turn in a website for the assignment.
 Unfortunately for some reason I didn&amp;rsquo;t include the original questions, so it&amp;rsquo;s kind of limited there.</description>
     </item>
