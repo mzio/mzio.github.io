@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://example.org/posts/001-starting_things/</loc>
+    <lastmod>2018-12-25T02:07:49+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/projects/002-crispr_vlps/</loc>
+    <lastmod>2018-12-25T01:37:59+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/</loc>
     <lastmod>2018-12-12T22:55:35-05:00</lastmod>
   </url>
@@ -13,7 +23,34 @@
   </url>
   
   <url>
+    <loc>http://example.org/posts/003-kinase-virus_analysis-post/</loc>
+    <lastmod>2017-01-25T03:38:07+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/002-crispr_vlps-post/</loc>
+    <lastmod>2016-05-27T01:37:59+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/projects/001-turbine_optimization/</loc>
+    <lastmod>2016-05-15T15:29:26-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/</loc>
+    <lastmod>2018-12-25T02:07:49+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/projects/</loc>
+    <lastmod>2018-12-25T01:37:59+09:00</lastmod>
     <priority>0</priority>
   </url>
   

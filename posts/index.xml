@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Heyo on Michael Zhang</title>
-    <link>http://example.org/</link>
-    <description>Recent content in Heyo on Michael Zhang</description>
+    <title>Posts on Michael Zhang</title>
+    <link>http://example.org/posts/</link>
+    <description>Recent content in Posts on Michael Zhang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Dec 2018 22:55:35 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 25 Dec 2018 02:07:49 +0900</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,17 +18,6 @@
       
       <guid>http://example.org/posts/001-starting_things/</guid>
       <description>It&amp;rsquo;s 2:08am on Christmas day in Hakone, Japan as I try to think of a good way to start this1. One of the things I&amp;rsquo;ve been telling myself for the last three years is that someday I&amp;rsquo;ll maintain a website that&amp;rsquo;s more than just a cryptic online resume. Perhaps it&amp;rsquo;d be a data science blog, something along the lines of FiveThiryEight or IQuantNY. Or maybe an online repository of side projects and ideas, the prospect of putting them up for someone else to discover supposedly motivating me to finish them.</description>
-    </item>
-    
-    <item>
-      <title>Genetic Engineering with CRISPR-Cas9 Virus-like Particles</title>
-      <link>http://example.org/projects/002-crispr_vlps/</link>
-      <pubDate>Tue, 25 Dec 2018 01:37:59 +0900</pubDate>
-      
-      <guid>http://example.org/projects/002-crispr_vlps/</guid>
-      <description>See the paper, poster, and research plan 
-I&amp;rsquo;m not sure if anyone will ever happen to be on this site looking for resources regarding science fairs, and I definitely don&amp;rsquo;t do as much wet-lab biology as I used to, but as an homage to a past high school obsession passion I thought it&amp;rsquo;d be nice to try to remember some past work.
-Some Abstract For some introduction, CRISPR-Cas9 is an exciting gene editing technology with many hyped applications in science and medicine.</description>
     </item>
     
     <item>
@@ -50,16 +39,6 @@ Kinases are pretty interesting to me. Sure I didn&amp;rsquo;t have the best intr
       <description>See the paper, poster, and research plan 
 I&amp;rsquo;m not sure if anyone will ever happen to be on this site looking for resources regarding science fairs, and I definitely don&amp;rsquo;t do as much wet-lab biology as I used to, but as an homage to a past high school obsession passion I thought it&amp;rsquo;d be nice to try to remember some past work.
 Some Abstract For some introduction, CRISPR-Cas9 is an exciting gene editing technology with many hyped applications in science and medicine.</description>
-    </item>
-    
-    <item>
-      <title>Turbine Optimization Problem</title>
-      <link>http://example.org/projects/001-turbine_optimization/</link>
-      <pubDate>Sun, 15 May 2016 15:29:26 -0500</pubDate>
-      
-      <guid>http://example.org/projects/001-turbine_optimization/</guid>
-      <description>Multivariable calculus was a fun time, and for a class project we were tasked with solving a Lagrange optimization problem. This was around the time I started learning about GitHub Pages and hosting websites for various club and activity-related things, so in my youthful enthusiasm I thought it&amp;rsquo;d be cool to turn in a website for the assignment.
-Unfortunately for some reason I didn&amp;rsquo;t include the original questions, so it&amp;rsquo;s kind of limited there.</description>
     </item>
     
   </channel>
