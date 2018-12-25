@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://michaelzhang.xyz/projects/005-mama_bandits/</loc>
+    <lastmod>2018-12-25T13:43:56+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://michaelzhang.xyz/posts/001-starting_things/</loc>
     <lastmod>2018-12-25T02:07:49+09:00</lastmod>
   </url>
@@ -65,7 +70,7 @@
   
   <url>
     <loc>https://michaelzhang.xyz/projects/</loc>
-    <lastmod>2018-05-31T22:43:46-05:00</lastmod>
+    <lastmod>2018-12-25T13:43:56+09:00</lastmod>
     <priority>0</priority>
   </url>
   

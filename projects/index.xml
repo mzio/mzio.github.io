@@ -6,10 +6,19 @@
     <description>Recent content in Projects on Michael Zhang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 31 May 2018 22:43:46 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 25 Dec 2018 13:43:56 +0900</lastBuildDate>
     
 	<atom:link href="https://michaelzhang.xyz/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Prediction Markets for Multi-Agent Multi-Armed Bandits</title>
+      <link>https://michaelzhang.xyz/projects/005-mama_bandits/</link>
+      <pubDate>Tue, 25 Dec 2018 13:43:56 +0900</pubDate>
+      
+      <guid>https://michaelzhang.xyz/projects/005-mama_bandits/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Mapping out SummerCamp NYC 2018</title>
