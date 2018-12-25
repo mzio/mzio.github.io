@@ -6,15 +6,25 @@
     <description>Recent content in Projects on Michael Zhang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Dec 2018 01:37:59 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 31 May 2018 22:43:46 -0500</lastBuildDate>
     
 	<atom:link href="https://michaelzhang.xyz/projects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Mapping out SummerCamp NYC 2018</title>
+      <link>https://michaelzhang.xyz/projects/004-summercamp_nyc-map-2018/</link>
+      <pubDate>Thu, 31 May 2018 22:43:46 -0500</pubDate>
+      
+      <guid>https://michaelzhang.xyz/projects/004-summercamp_nyc-map-2018/</guid>
+      <description>Second part of a two-part series introducing SummerCamp NYC 2018. Also published on Medium here.
+Part 2: Location, Location, &amp;hellip; Intern Preferences! If the students make up the heart of SummerCamp, the events bring them together and keep the community running. While ranging in size and nature, none of them would be possible without the fantastic hosts and partner companies we’ve been able to work with over the years, and a big part of organizing SummerCamp involves coordinating and planning for a series of meet-ups over the summer.</description>
+    </item>
+    
+    <item>
       <title>Genetic Engineering with CRISPR-Cas9 Virus-like Particles</title>
       <link>https://michaelzhang.xyz/projects/002-crispr_vlps/</link>
-      <pubDate>Tue, 25 Dec 2018 01:37:59 +0900</pubDate>
+      <pubDate>Fri, 27 May 2016 01:37:59 +0900</pubDate>
       
       <guid>https://michaelzhang.xyz/projects/002-crispr_vlps/</guid>
       <description>See the paper, poster, and research plan 

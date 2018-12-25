@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+            Mapping out SummerCamp NYC 2018 &middot; Michael Zhang
+    </title>
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Michael Zhang" />
+</head>
+    
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Michael Zhang</h2>
+				</a>
+				<ul>
+    <li><a href="/about">About</a></li>
+    <li><a href="/posts">Posts</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/">Home</a></li>
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Updated</span><span> on&nbsp;</span><time datetime="2018-12-25 00:00:00 &#43;0000 UTC">December 25, 2018</time>
+        
+
+    
+</div>
+		<h1 class="post-title">Mapping out SummerCamp NYC 2018</h1>
+<div class="post-line" style="padding-bottom: 16px"></div>
+
+		
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+		<div style="margin-bottom: 2em">
+			<i>An interactive map of Harvard interns working in NYC during Summer 2018</i>
+		</div>
+
+		
+
+<p><em>Second part of a two-part series introducing SummerCamp NYC 2018. Also published on Medium <a href="https://medium.com/@michael.zhang/an-intro-to-summercamp-nyc-2018-e9a08f65628a">here</a>.</em></p>
+
+<h2 id="part-2-location-location-intern-preferences">Part 2: Location, Location, &hellip; Intern Preferences!</h2>
+
+<p>If the students make up the heart of SummerCamp, the events bring them together and keep the community running. While ranging in size and nature, none of them would be possible without the fantastic hosts and partner companies we’ve been able to work with over the years, and a big part of organizing SummerCamp involves coordinating and planning for a series of meet-ups over the summer.</p>
+
+<p>From more intimate meet-ups such as five to 10 person dinners organized off-site, to larger get-togethers involving office tours, speaking panels, and networking sessions, we aim to make events both fun and informative for both our student attendees and hosting companies. Actual event structure is left to the company’s discretion, but giving students a chance to learn about the company, hear about employees’ backgrounds and day-to-day activities, and get exposure to cool technology and relevant projects are all good jumping points. As most recruiters are probably well aware, two standbys for the fastest way to a college student’s heart — free food and branded swag — are also bonuses that are always appreciated.</p>
+
+<h3 id="following-the-real-estate-agent-s-mantra">Following the Real Estate Agent’s Mantra</h3>
+
+<p>This year, I wanted to focus on generating a greater student turnout, courtesy of a bigger SummerCamp group and more careful planning. For example, SummerCamp events are usually scheduled on workday evenings (starting around 6 or 7 pm) so that students can come after work and employees don’t have to come in on the weekends. But even then, New York City is a big place, and from firsthand experience I know how discouraging it can be to travel somewhere too far or too inconvenient to get to from work or home.</p>
+
+<p>What’s even worse to me however is a party that no one shows up to, and so while still a work in progress and amenable to updates, to combat this I mapped out all interns’ rough locations based on employer and rough NYC 2010 census tract data.</p>
+
+<figure>
+    <img src="/images/004-sc_nyc-01.png"/> 
+</figure>
+
+
+<p>The choropleth-based app gives a wide overview on where interns are congregated up to census tract specificity, and also specifies the top neighborhoods related to a query. Besides identifying where interns are, we can also apply filters to specifically account for certain categories, say if you wanted to look for where software engineers or Statistics majors were congregated (Hudson Yards seems popular among that crowd). Another handy feature is separating out interns by event preference, such as if they prefer large, medium, or small events, and identifying the parts of Manhattan where students are down to go to museums (fun trips with alumni!) versus just grabbing a meal.</p>
+
+<figure>
+    <img src="/images/004-sc_nyc-app-01.gif"/> 
+</figure>
+
+
+<p><em>Work in progress indeed. Notice that through filtering and data processing, only 76 interns made it to the map, and so while it&rsquo;s hopefully still representative it&rsquo;s also flagged for further development :)</em></p>
+
+<p>The above information becomes possible through the sign-up process for SummerCamp. Students were asked how frequently they would be down to attend a SummerCamp event, if they&rsquo;d be interested in small, medium, or large meet-ups, and also if there were any specific activities outside of the standard office tour / networking session that appealed to them. Using this data (take this as proof that we actually use your answers in the submission form for something), we can further break down preferences and provide some insight into popular things to do.</p>
+
+<p>For example, we can see that interns are more commonly looking to go to smaller or medium-sized events more frequently, with those preferring to go to something weekly or every other week both being twice as numerous as those that would only be interested in doing something monthly.</p>
+
+<p><figure>
+    <img src="/images/004-sc_nyc-app-02.png"/> 
+</figure>
+
+<em>Interns were asked to pick which of the three frequencies they preferred the most, but were free to choose any and up to all event sizes that they&rsquo;d be interested in attending.</em></p>
+
+<p>In addition, while the most popular response overall involved biweekly medium-sized events (like a company mixer targeted at hosting 30–50 people), smaller events (such as private dinners capped at 10 to 15 people) were equally as popular as medium-sized events when considering both weekly and biweekly intended attendance. Meeting demand in our group, these are most likely easier to put together (reservation for twelve at a nearby restaurant) more frequently. So while SummerCamp might always like being able to attend a big company-dedicated night full of featured speakers, panel discussions, and networking + food, perfectly viable alternatives exist at lower organizational budgets.</p>
+
+<p><figure>
+    <img src="/images/004-sc_nyc-app-03.png"/> 
+</figure>
+
+<em>The same data as before, just swapping variables to display. If weekly and biweekly groups settle their differences (two events every three weeks?), small and medium events are equally preferred.</em></p>
+
+<p>Exploring that idea of alternate events further, we can also look at what social events with other members of SummerCamp students would be interested in.</p>
+
+<figure>
+    <img src="/images/004-sc_nyc-app-04.png"/> 
+</figure>
+
+
+<p>Top choices involve restaurants (good thing that NYC has a lot of those), going to music venues (concerts and festivals, which are also pretty numerous over the summer), and house parties (perhaps limited by company housing). Another positive note for companies is that among weekly preferences, there were above 10 positive responses for each event type. For the companies that might want to interact with students, but for which hosting networking mixers might sound too much like a career fair redux, there&rsquo;s ample opportunity to get your employees to spend some time with Harvard kids doing something new :)</p>
+
+<p><figure>
+    <img src="/images/004-sc_nyc-app-05.png"/> 
+</figure>
+
+<em>Again same data as above, but this time the heat map really brings out the stronger representation in weekly and biweekly event attenders. Also restaurants and music venues are good too.</em></p>
+
+<p>So there you have it; a further look into what SummerCamp members are into regarding events, and the introduction of using location to help guide the right events. Play around with the map, notice where all the SWE / ML / finance interns or CS / Stats / Applied Math majors are, and hopefully the choropleth can provide some insight for better event planning and answering questions such as whether hosting Sunday brunch in Tribeca is a good idea.</p>
+
+<p><figure>
+    <img src="/images/004-sc_nyc-app-06.gif"/> 
+</figure>
+
+<em>More gratuitous zooming and flying available at <a href="http://michaelzhang.xyz/SummerCamp-NYC-2018-Map/#">http://michaelzhang.xyz/SummerCamp-NYC-2018-Map/#</a></em></p>
+
+
+		
+	</div>
+</main>
+
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2018-12-26 01:09:10.693539 &#43;0800 CST m=&#43;0.202138162">2018</time>. Michael Zhang. H' 2020. 
+			</span>
+		</footer>
+
+    </body>
+</html>
