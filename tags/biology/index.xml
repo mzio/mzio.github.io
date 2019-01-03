@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Biology on Michael Zhang</title>
+    <link>https://michaelzhang.xyz/tags/biology/</link>
+    <description>Recent content in Biology on Michael Zhang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Jan 2017 03:38:07 +0900</lastBuildDate>
+    
+	<atom:link href="https://michaelzhang.xyz/tags/biology/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mapping Kinases and Viral Drug Connectivity</title>
+      <link>https://michaelzhang.xyz/posts/003-kinase-virus_analysis-post/</link>
+      <pubDate>Wed, 25 Jan 2017 03:38:07 +0900</pubDate>
+      
+      <guid>https://michaelzhang.xyz/posts/003-kinase-virus_analysis-post/</guid>
+      <description>Source: Maillard Lab
+Kinases are pretty interesting to me. Sure I didn&amp;rsquo;t have the best introduction with them - as with most proteins, they were portrayed in AP Biology as either overly simple cartoon squiggly shapes or hopelessly complex ribbon / space-filling models, playing some large role in cell signaling with an equally large number of chemicals and sub-products to memorize. But over time I was able to see past these offenses to arrive at my current sentiment: kinases are kind of cool.</description>
+    </item>
+    
+    <item>
+      <title>Genetic Engineering with CRISPR-Cas9 Virus-like Particles</title>
+      <link>https://michaelzhang.xyz/posts/002-crispr_vlps-post/</link>
+      <pubDate>Fri, 27 May 2016 01:37:59 +0900</pubDate>
+      
+      <guid>https://michaelzhang.xyz/posts/002-crispr_vlps-post/</guid>
+      <description>See the paper, poster, and research plan 
+I&amp;rsquo;m not sure if anyone will ever happen to be on this site looking for resources regarding science fairs, and I definitely don&amp;rsquo;t do as much wet-lab biology as I used to, but as an homage to a past high school obsession passion I thought it&amp;rsquo;d be nice to try to remember some past work.
+Some Abstract For some introduction, CRISPR-Cas9 is an exciting gene editing technology with many hyped applications in science and medicine.</description>
+    </item>
+    
+  </channel>
+</rss>

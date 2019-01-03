@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Personal on Michael Zhang</title>
+    <link>https://michaelzhang.xyz/tags/personal/</link>
+    <description>Recent content in Personal on Michael Zhang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Dec 2018 02:07:49 +0900</lastBuildDate>
+    
+	<atom:link href="https://michaelzhang.xyz/tags/personal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Starting Things</title>
+      <link>https://michaelzhang.xyz/posts/001-starting_things/</link>
+      <pubDate>Tue, 25 Dec 2018 02:07:49 +0900</pubDate>
+      
+      <guid>https://michaelzhang.xyz/posts/001-starting_things/</guid>
+      <description>It&amp;rsquo;s 2:08am on Christmas day in Hakone, Japan as I try to think of a good way to start this1. One of the things I&amp;rsquo;ve been telling myself for the last three years is that someday I&amp;rsquo;ll maintain a website that&amp;rsquo;s more than just a cryptic online resume. Perhaps it&amp;rsquo;d be a data science blog, something along the lines of FiveThiryEight or IQuantNY. Or maybe an online repository of side projects and ideas, the prospect of putting them up for someone else to discover supposedly motivating me to finish them.</description>
+    </item>
+    
+  </channel>
+</rss>

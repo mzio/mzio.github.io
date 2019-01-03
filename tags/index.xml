@@ -6,9 +6,37 @@
     <description>Recent content in Tags on Michael Zhang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 25 Jan 2017 03:38:07 +0900</lastBuildDate>
     
 	<atom:link href="https://michaelzhang.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Biology</title>
+      <link>https://michaelzhang.xyz/tags/biology/</link>
+      <pubDate>Wed, 25 Jan 2017 03:38:07 +0900</pubDate>
+      
+      <guid>https://michaelzhang.xyz/tags/biology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science</title>
+      <link>https://michaelzhang.xyz/tags/data-science/</link>
+      <pubDate>Thu, 31 May 2018 15:29:26 -0500</pubDate>
+      
+      <guid>https://michaelzhang.xyz/tags/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Personal</title>
+      <link>https://michaelzhang.xyz/tags/personal/</link>
+      <pubDate>Tue, 25 Dec 2018 02:07:49 +0900</pubDate>
+      
+      <guid>https://michaelzhang.xyz/tags/personal/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
