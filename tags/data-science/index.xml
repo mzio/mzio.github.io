@@ -6,10 +6,19 @@
     <description>Recent content in Data Science on Michael Zhang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 31 May 2018 15:29:26 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 22 Jan 2019 23:18:03 -0500</lastBuildDate>
     
 	<atom:link href="https://michaelzhang.xyz/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tokyo Metro Markov Models: Hi World</title>
+      <link>https://michaelzhang.xyz/posts/006-tokyo_metro_markov_chains/</link>
+      <pubDate>Tue, 22 Jan 2019 23:18:03 -0500</pubDate>
+      
+      <guid>https://michaelzhang.xyz/posts/006-tokyo_metro_markov_chains/</guid>
+      <description>Two things I think are pretty cool: the Tokyo subway system and Markov chains. In all seriousness, as a big proponent of learning by doing, I&amp;rsquo;m always trying to figure out how to combine some theory with real-world application, motivated by creating something cool in the process. Coming home from two weeks in Tokyo + Shanghai and a week in the Bay Area at Hack Lodge, it was a fun way to combine some things I knew about for some time (making maps, markov chains), with things I recently learned about (the Tokyo metro, the &amp;ldquo;joys&amp;rdquo; of React and front-end), and a tiny relation to a preview of stuff yet to come (Stat 212 fun&amp;hellip;).</description>
+    </item>
     
     <item>
       <title>Mapping out SummerCamp NYC 2018</title>

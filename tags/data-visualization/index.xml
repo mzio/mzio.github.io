@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Visualization on Michael Zhang</title>
+    <link>https://michaelzhang.xyz/tags/data-visualization/</link>
+    <description>Recent content in Data Visualization on Michael Zhang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Jan 2019 23:18:03 -0500</lastBuildDate>
+    
+	<atom:link href="https://michaelzhang.xyz/tags/data-visualization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tokyo Metro Markov Models: Hi World</title>
+      <link>https://michaelzhang.xyz/posts/006-tokyo_metro_markov_chains/</link>
+      <pubDate>Tue, 22 Jan 2019 23:18:03 -0500</pubDate>
+      
+      <guid>https://michaelzhang.xyz/posts/006-tokyo_metro_markov_chains/</guid>
+      <description>Two things I think are pretty cool: the Tokyo subway system and Markov chains. In all seriousness, as a big proponent of learning by doing, I&amp;rsquo;m always trying to figure out how to combine some theory with real-world application, motivated by creating something cool in the process. Coming home from two weeks in Tokyo + Shanghai and a week in the Bay Area at Hack Lodge, it was a fun way to combine some things I knew about for some time (making maps, markov chains), with things I recently learned about (the Tokyo metro, the &amp;ldquo;joys&amp;rdquo; of React and front-end), and a tiny relation to a preview of stuff yet to come (Stat 212 fun&amp;hellip;).</description>
+    </item>
+    
+  </channel>
+</rss>
