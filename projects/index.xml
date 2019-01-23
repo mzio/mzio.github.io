@@ -6,10 +6,19 @@
     <description>Recent content in Projects on Michael Zhang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Dec 2018 13:43:56 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 22 Jan 2019 22:40:51 -0500</lastBuildDate>
     
 	<atom:link href="https://michaelzhang.xyz/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>006 Tokyo_metro_markov_chains</title>
+      <link>https://michaelzhang.xyz/projects/006-tokyo_metro_markov_chains/</link>
+      <pubDate>Tue, 22 Jan 2019 22:40:51 -0500</pubDate>
+      
+      <guid>https://michaelzhang.xyz/projects/006-tokyo_metro_markov_chains/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Prediction Markets for Multi-Agent Multi-Armed Bandits</title>
