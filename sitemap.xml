@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://michaelzhang.xyz/posts/006.1-tokyo_metro_markov-inspiration_and_data_grind/</loc>
+    <lastmod>2019-01-22T23:57:50-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://michaelzhang.xyz/posts/006-tokyo_metro_markov_chains/</loc>
     <lastmod>2019-01-22T23:18:03-05:00</lastmod>
   </url>
@@ -98,7 +103,7 @@
   
   <url>
     <loc>https://michaelzhang.xyz/posts/</loc>
-    <lastmod>2019-01-22T23:18:03-05:00</lastmod>
+    <lastmod>2019-01-22T23:57:50-05:00</lastmod>
     <priority>0</priority>
   </url>
   

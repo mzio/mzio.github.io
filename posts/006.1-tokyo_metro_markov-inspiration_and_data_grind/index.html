@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+            Tokyo Metro Markov Models: Inspiration and the Data Grind &middot; Michael Zhang
+    </title>
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Michael Zhang" />
+</head>
+    
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Michael Zhang</h2>
+				</a>
+				<ul>
+    <li><a href="/about">About</a></li>
+    <li><a href="/posts">Posts</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/">Home</a></li>
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Updated</span><span> on&nbsp;</span><time datetime="2019-01-22 23:57:50 -0500 EST">January 22, 2019</time>
+        
+
+    
+</div>
+		<h1 class="post-title">Tokyo Metro Markov Models: Inspiration and the Data Grind</h1>
+<div class="post-line" style="padding-bottom: 16px"></div>
+
+		
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+		<div style="margin-bottom: 2em">
+			<i></i>
+			
+		</div>
+		
+	    
+
+		<p>I miss winter break. It was really fun just being able to go out to Tokyo, and see everything there. At first, i thought the language barrier would keep us out, and it was just a few days till Shanghai. But now that I look back at it, it really was a great winter break. Not sure I want to leave for school, this is the first time I&rsquo;m feeling this.</p>
+
+<p>Insp</p>
+
+<p>As I write this, it&rsquo;s been more than a month since my break started, and I still have a last few days to go before it&rsquo;s back to Cambridge. I&rsquo;ve always thought of winter break as a time to yes relax, but also an opportunity to do more, as opposed to when all that time is used up by the grind of the semester. For the past two years, I think I&rsquo;ve followed this mantra pretty well, working at a Boston-based startup my freshman year and doing a venture capital internship last year. However, as I look back at my junior year break, the paradoxical nature is that I&rsquo;ve done a lot, coming away with the most satisfying break yet, yet hour for hour this was also the least structured break. I spent close to two weeks overseas for vacation, with not very much time dedicated each in Tokyo, Hakone, Shanghai, and Beijing, then visited the Bay Area for 168-hour side project grind.</p>
+
+<p>Thought about hidden markov models, or trying to imagine reasonable constraints to analytically derive the transition matrix that would fit a stationary distribution of every station. At the end of the day I settled for a simple ratio-based test, which might not even be legal. Given a subway line but independent of a check-in station, compute the sample probability of the neighboring station in one direction and the neighboring station in the other direction. For all occurrences, all nonzero elements in the transition matrix for the row corresponding to that station are then found.</p>
+
+<p>Big idea is inferring which station comes next, given only the location data. This wasn&rsquo;t exactly obvious to me, and also reminded me that vector-inferring GPS would be so much better(1)</p>
+
+<p>(1) GPS gives you the direction of the path from a satellite view, but from your perspective unless there are obvious landmarks you usually need to walk a bit and then note where you&rsquo;ve moved from the birds-eye view to see if you&rsquo;ve gone in the right direction. It&rsquo;d be great if one could just immediately tell if they needed to turn around.</p>
+
+
+		
+	</div>
+</main>
+
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2019-01-23 23:34:43.100132 -0500 EST m=&#43;0.268490723">2019</time>. Michael Zhang. H' 2020. 
+			</span>
+		</footer>
+
+    </body>
+</html>
