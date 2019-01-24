@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
-            Tokyo Metro Markov Models: Hi World &middot; Michael Zhang
+            Lost in Japan: Reflections and  &middot; Michael Zhang
     </title>
 
     
@@ -48,7 +48,7 @@
 
     
 </div>
-		<h1 class="post-title">Tokyo Metro Markov Models: Hi World</h1>
+		<h1 class="post-title">Lost in Japan: Reflections and </h1>
 <div class="post-line" style="padding-bottom: 16px"></div>
 
 		
@@ -82,7 +82,7 @@
 </script>
 
 		<div style="margin-bottom: 2em">
-			<i>Simulating Tokyo Metro travel through Markov chains.</i>
+			<i>Blog post on time in Tokyo and simulating the metro travel through Markov chains.</i>
 			
 		    <div class="tag-container">
 		    	Tags: [
@@ -107,6 +107,30 @@
 		                data visualization
 		            </a>
 		        </span> 
+		        
+		         <span class="tag">
+		            <a href="https://michaelzhang.xyz/tags/personal">
+		                
+		            </a>
+		        </span>, 
+		        
+		        <span class="tag">
+		            <a href="https://michaelzhang.xyz/tags/personal">
+		                personal
+		            </a>
+		        </span> 
+		        
+		         <span class="tag">
+		            <a href="https://michaelzhang.xyz/tags/reflection">
+		                
+		            </a>
+		        </span>, 
+		        
+		        <span class="tag">
+		            <a href="https://michaelzhang.xyz/tags/reflection">
+		                reflection
+		            </a>
+		        </span> 
 		        ]
 		    </div>
 		    
@@ -114,20 +138,81 @@
 		
 	    
 
-		<p>Two things I think are pretty cool: the Tokyo subway system and Markov chains. In all seriousness, as a big proponent of learning by doing, I&rsquo;m always trying to figure out how to combine some theory with real-world application, motivated by creating something cool in the process. Coming home from two weeks in Tokyo + Shanghai and a week in the Bay Area at <a href="https://hacklodge.org/">Hack Lodge</a>, it was a fun way to combine some things I knew about for some time (making maps, markov chains), with things I recently learned about (the Tokyo metro, the &ldquo;joys&rdquo; of React and front-end), and a tiny relation to a preview of stuff yet to come (<a href="http://www.people.fas.harvard.edu/~pillai/Teaching_files/syllabus.pdf">Stat 212 fun</a>&hellip;).</p>
+		
 
-<p>There&rsquo;s some thinking / writing I want to get to first, but as part of this side-project thing posts for how I went about creating it will be coming up as well. Links below:</p>
+<p>Winter break&rsquo;s been a long one. By now I&rsquo;ve gotten used to being out of school, but it&rsquo;s hard to think that four weeks ago I was in Japan. Family&rsquo;s been on a traveling kick lately, and this year we spent ten days between Tokyo, Kamakura, Hakone, Shanghai, Beijing.</p>
 
-<ul>
-<li><a href="http://www.people.fas.harvard.edu/~pillai/Teaching_files/syllabus.pdf">The actual project</a>.</li>
-</ul>
+<p>Although I&rsquo;d been to Tokyo for some epsilon-long layovers before, and this time our time in Japan could probably still only be considered a layover (3 out of 10 days woo), I&rsquo;d still consider the recent trip to be the first time I really got to see the country.</p>
 
 <figure>
-    <img src="/images/006-tokyo_metro_markov_models-preview.png"/> 
+  <img src="/images/006-tokyo-shibuya.jpg"  />
+  <figcaption>
+      <i>Bright lights of Shibuya crossing</i>
+  </figcaption>
+</figure>
+
+<figure>
+    <img src="/images/006-tokyo-shibuya.jpg"/> <figcaption>
+            <h4>Bright lights of Shibuya Crossing</h4>
+        </figcaption>
 </figure>
 
 
-<p><em>Fun glowy bois</em></p>
+<p>And it was a blast. For some reason, the combination of really great food and a new culture was just really fun. Sure there were similarities with Shanghai (bright lights, crowded streets, general feeling of being in the future). But the differences were also there in a readily-apparent-but-not-so-describable way.</p>
+
+<figure>
+    <img src="/images/006-tokyo-daifuku.jpg"/> <figcaption>
+            <h4>So much strawberry daifuku! Perhaps ironically taken at the Tsukiji outer fish market</h4>
+        </figcaption>
+</figure>
+
+
+<h2 id="wow-a-popular-song-song-reference">Wow a popular song song reference?</h2>
+
+<p>Aside from the song title reference, perhaps unsurprisingly we actually did get lost on several occasions. Trying to fill up some time before our check-in at an onsen in Hakone, we decided to take a train to Kamakura along the way, a smaller city south of Tokyo right by the ocean. Depending on perspective I guess it could be called exploring, but essentially we were a lost group of foreigners wandering around a coastal town not exactly knowing what we were doing.</p>
+
+<figure>
+    <img src="/images/006-tokyo-kamakura.jpg"/> <figcaption>
+            <h4>Streets of Kamakura</h4>
+        </figcaption>
+</figure>
+
+
+<p>We also technically got lost immediately upon landing in Tokyo Narita International Airport. The <a href="https://www.dictionary.com/browse/lost">third definition on Dictionary.com</a> involves &ldquo;having gone astray or missed the way&rdquo;. You can imagine after enduring a 13 hour flight and passing through customs (which surprisingly wasn&rsquo;t that bad) how eager we were to finally get to our hotel, find some place to eat, and immediately&hellip;</p>
+
+<p>&hellip;step onto the wrong train.</p>
+
+<figure>
+    <img src="/images/006-tokyo-lost_train.jpg"/> <figcaption>
+            <h4>Google Maps said take something called the Skyliner, but apparently it&#39;s possible to think you&#39;re getting on and end up on something that&#39;s not the Skyliner?</h4>
+        </figcaption>
+</figure>
+
+
+<!-- _Google Maps said take something called the Skyliner, but apparently it's possible to think you're getting on and end up on something that's not the Skyliner?_  -->
+
+<p>Needless to say, we got to know a lot of trains by the end of the trip. It&rsquo;s pretty amazing to me how extensive the subway system is in Tokyo, and you can take trains everywhere! I know this isn&rsquo;t unique to the city, but what is pretty cool is that at certain stations, trains will play these jingles, or &ldquo;<em>eki-melo</em>&rdquo; when they arrive. I actually knew about their existence from a <a href="https://www.youtube.com/watch?v=nSG5IkRA9BE">Great Big Story video</a> (Minoru Mukaiya, the guy behind the songs, has made over 200 distinct melodies for over 110 stations!), so it was a lot of fun hearing them come on at various stops.</p>
+
+<h2 id="metros-and-markov-models">Metros and Markov Models</h2>
+
+<p>While I&rsquo;ve never been one to really hold myself accountable to New Year&rsquo;s Resolutions, two things I&rsquo;m actively trying are being more active with this blog and do more side projects. Along these lines, I wanted to do something related to my time in Japan.</p>
+
+<p>Eki-melo really stood out, and while the coverage is pretty extensive, there&rsquo;s not exactly a uniquely melody for each station yet. I had thought about playing around with something like <a href="https://magenta.tensorflow.org/music-vae">MusicVAE</a> to generate new tunes for stations without their unique songs yet (one idea: for each station without a unique melody learn a distribution that&rsquo;s essentially the interpolation between the first two neighboring stations with unique eki-melo). However, I also wanted to use open data, and deal with an extensive set of stations. While Tokyo&rsquo;s actually got a really exciting <a href="http://www.data.go.jp/?lang=english">repository of open data</a>, it&rsquo;d take a little more work to find / purchase the eki-melo. At the same time, I actually hadn&rsquo;t made a moving particle map thing, although I&rsquo;ve seen a lot of awesome examples, and so with past work as inspiration I created the visualization as a weekly side project.</p>
+
+<p>The goal was pretty simple: use open transit data to inform a visualization about travel on a regular day. Ideally, tie in some stats or probability. So instead of just replaying back data, use the data to create some sort of simulation. I hope to go more into the technical details in a follow-up post, but the general idea I settled on was to assume some sort of Markov model for transit. Each station could be a node in a larger Markov chain, and so a task would be to infer transition probabilities to the neighboring stops. To consider changes in travel patterns over time, I&rsquo;d switch between possible transition matrices depending on the hour. Finally, with D3 and React, I envisioned some sort of web app where particles representing travelers could randomly spawn at any stop, and go off moving to different neighboring stops following the larger transition matrix.</p>
+
+<h2 id="keeping-up-with-these-resolutions">Keeping up with these resolutions</h2>
+
+<p>I spent about two days deciding what data to use and building up the models in Python, and the rest of a week playing around with D3, React, and pretty-ing things (although it&rsquo;s still not very mobile-optimized). It&rsquo;s up and running <a href="http://michaelzhang.xyz/tokyo-metro-markov-models/">here</a>, or click on the view project button on the project page.</p>
+
+<p>I&rsquo;d like to set a goal to do something low-key like this every week or every-other week this year, but something else tells me the semester might get super busy. Regardless, it was super fun, and a nice way to rediscover some of winter break.</p>
+
+<figure>
+    <img src="/images/006-tokyo_metro_markov_models_demo.gif"/> <figcaption>
+            <h4>Tokyo Metro Markov glowy bois</h4>
+        </figcaption>
+</figure>
+
 
 
 		
@@ -137,7 +222,7 @@
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-01-23 23:35:08.681749 -0500 EST m=&#43;0.083505251">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-01-24 01:10:23.135725 -0500 EST m=&#43;0.179412156">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 

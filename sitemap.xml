@@ -97,7 +97,7 @@
   
   <url>
     <loc>https://michaelzhang.xyz/tags/personal/</loc>
-    <lastmod>2018-12-25T02:07:49+09:00</lastmod>
+    <lastmod>2019-01-22T23:18:03-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -110,6 +110,12 @@
   <url>
     <loc>https://michaelzhang.xyz/projects/</loc>
     <lastmod>2019-01-22T22:40:51-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://michaelzhang.xyz/tags/reflection/</loc>
+    <lastmod>2019-01-22T23:18:03-05:00</lastmod>
     <priority>0</priority>
   </url>
   

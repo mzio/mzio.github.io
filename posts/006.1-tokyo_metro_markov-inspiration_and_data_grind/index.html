@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
-            Tokyo Metro Markov Models: Inspiration and the Data Grind &middot; Michael Zhang
+            Tokyo Metro Markov Models: Data Grind and D3 &middot; Michael Zhang
     </title>
 
     
@@ -48,7 +48,7 @@
 
     
 </div>
-		<h1 class="post-title">Tokyo Metro Markov Models: Inspiration and the Data Grind</h1>
+		<h1 class="post-title">Tokyo Metro Markov Models: Data Grind and D3</h1>
 <div class="post-line" style="padding-bottom: 16px"></div>
 
 		
@@ -88,17 +88,17 @@
 		
 	    
 
-		<p>I miss winter break. It was really fun just being able to go out to Tokyo, and see everything there. At first, i thought the language barrier would keep us out, and it was just a few days till Shanghai. But now that I look back at it, it really was a great winter break. Not sure I want to leave for school, this is the first time I&rsquo;m feeling this.</p>
+		<!-- I miss winter break. It was really fun just being able to go out to Tokyo, and see everything there. At first, i thought the language barrier would keep us out, and it was just a few days till Shanghai. But now that I look back at it, it really was a great winter break. Not sure I want to leave for school, this is the first time I'm feeling this.  
 
-<p>Insp</p>
+Insp
 
-<p>As I write this, it&rsquo;s been more than a month since my break started, and I still have a last few days to go before it&rsquo;s back to Cambridge. I&rsquo;ve always thought of winter break as a time to yes relax, but also an opportunity to do more, as opposed to when all that time is used up by the grind of the semester. For the past two years, I think I&rsquo;ve followed this mantra pretty well, working at a Boston-based startup my freshman year and doing a venture capital internship last year. However, as I look back at my junior year break, the paradoxical nature is that I&rsquo;ve done a lot, coming away with the most satisfying break yet, yet hour for hour this was also the least structured break. I spent close to two weeks overseas for vacation, with not very much time dedicated each in Tokyo, Hakone, Shanghai, and Beijing, then visited the Bay Area for 168-hour side project grind.</p>
+As I write this, it's been more than a month since my break started, and I still have a last few days to go before it's back to Cambridge. I've always thought of winter break as a time to yes relax, but also an opportunity to do more, as opposed to when all that time is used up by the grind of the semester. For the past two years, I think I've followed this mantra pretty well, working at a Boston-based startup my freshman year and doing a venture capital internship last year. However, as I look back at my junior year break, the paradoxical nature is that I've done a lot, coming away with the most satisfying break yet, yet hour for hour this was also the least structured break. I spent close to two weeks overseas for vacation, with not very much time dedicated each in Tokyo, Hakone, Shanghai, and Beijing, then visited the Bay Area for 168-hour side project grind. 
 
-<p>Thought about hidden markov models, or trying to imagine reasonable constraints to analytically derive the transition matrix that would fit a stationary distribution of every station. At the end of the day I settled for a simple ratio-based test, which might not even be legal. Given a subway line but independent of a check-in station, compute the sample probability of the neighboring station in one direction and the neighboring station in the other direction. For all occurrences, all nonzero elements in the transition matrix for the row corresponding to that station are then found.</p>
+Thought about hidden markov models, or trying to imagine reasonable constraints to analytically derive the transition matrix that would fit a stationary distribution of every station. At the end of the day I settled for a simple ratio-based test, which might not even be legal. Given a subway line but independent of a check-in station, compute the sample probability of the neighboring station in one direction and the neighboring station in the other direction. For all occurrences, all nonzero elements in the transition matrix for the row corresponding to that station are then found.
 
-<p>Big idea is inferring which station comes next, given only the location data. This wasn&rsquo;t exactly obvious to me, and also reminded me that vector-inferring GPS would be so much better(1)</p>
+Big idea is inferring which station comes next, given only the location data. This wasn't exactly obvious to me, and also reminded me that vector-inferring GPS would be so much better(1)
 
-<p>(1) GPS gives you the direction of the path from a satellite view, but from your perspective unless there are obvious landmarks you usually need to walk a bit and then note where you&rsquo;ve moved from the birds-eye view to see if you&rsquo;ve gone in the right direction. It&rsquo;d be great if one could just immediately tell if they needed to turn around.</p>
+(1) GPS gives you the direction of the path from a satellite view, but from your perspective unless there are obvious landmarks you usually need to walk a bit and then note where you've moved from the birds-eye view to see if you've gone in the right direction. It'd be great if one could just immediately tell if they needed to turn around. -->
 
 
 		
@@ -108,7 +108,7 @@
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-01-23 23:35:08.68153 -0500 EST m=&#43;0.083285718">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-01-24 01:10:23.135107 -0500 EST m=&#43;0.178794725">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 
