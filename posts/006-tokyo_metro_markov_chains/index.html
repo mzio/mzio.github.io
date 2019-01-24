@@ -153,13 +153,6 @@
 
 <p>And it was a blast. For some reason, the combination of really great food and a new culture was just really fun. Sure there were similarities with Shanghai (bright lights, crowded streets, general feeling of being in the future). But the differences were also there in a readily-apparent-but-not-so-describable way.</p>
 
-<figure>
-  <img src="/images/006-tokyo-daifuku.jpg"  />
-  <figcaption style="text-align: center">
-      <i>So much strawberry daifuku! Perhaps ironically taken at the Tsukiji outer fish market</i>
-  </figcaption>
-</figure>
-
 <!-- <figure>
     <img src="/images/006-tokyo-daifuku.jpg"/> <figcaption>
             <h4>So much strawberry daifuku! Perhaps ironically taken at the Tsukiji outer fish market</h4>
@@ -213,6 +206,13 @@
 
 <p>The goal was pretty simple: use open transit data to inform a visualization about travel on a regular day. Ideally, tie in some stats or probability. So instead of just replaying back data, use the data to create some sort of simulation. I hope to go more into the technical details in a follow-up post, but the general idea I settled on was to assume some sort of Markov model for transit. Each station could be a node in a larger Markov chain, and so a task would be to infer transition probabilities to the neighboring stops. To consider changes in travel patterns over time, I&rsquo;d switch between possible transition matrices depending on the hour. Finally, with D3 and React, I envisioned some sort of web app where particles representing travelers could randomly spawn at any stop, and go off moving to different neighboring stops following the larger transition matrix.</p>
 
+<figure>
+  <img src="/images/006-tokyo_metro_markov_models_demo.gif"  />
+  <figcaption style="text-align: center">
+      <i>Tokyo Metro Markov glowy bois</i>
+  </figcaption>
+</figure>
+
 <h2 id="keeping-up-with-these-resolutions">Keeping up with these resolutions</h2>
 
 <p>I spent about two days deciding what data to use and building up the models in Python, and the rest of a week playing around with D3, React, and pretty-ing things (although it&rsquo;s still not very mobile-optimized). It&rsquo;s up and running <a href="http://michaelzhang.xyz/tokyo-metro-markov-models/">here</a>, or click on the view project button on the project page.</p>
@@ -220,9 +220,9 @@
 <p>I&rsquo;d like to set a goal to do something low-key like this every week or every-other week this year, but something else tells me the semester might get super busy. Regardless, it was super fun, and a nice way to rediscover some of winter break.</p>
 
 <p><figure>
-  <img src="/images/006-tokyo_metro_markov_models_demo.gif"  />
+  <img src="/images/006-tokyo-daifuku.jpg"  />
   <figcaption style="text-align: center">
-      <i>Tokyo Metro Markov glowy bois</i>
+      <i>Ending with obligatory food pic related to time abroad. So much strawberry daifuku! Perhaps ironically taken at the <a href="https://www.japan-guide.com/e/e3021.html">Tsukiji outer fish market</a>.</i>
   </figcaption>
 </figure>
 <!-- 
@@ -241,7 +241,7 @@
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-01-24 01:48:44.492263 -0500 EST m=&#43;0.109388031">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-01-24 15:29:56.177744 -0500 EST m=&#43;0.378993258">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 
