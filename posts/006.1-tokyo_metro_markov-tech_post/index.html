@@ -9,6 +9,36 @@
     </title>
 
     
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+    
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -220,7 +250,7 @@ len((df_subway_small[<span style="color:#e6db74">&#39;latitude&#39;</span>]<span
 
 <p>where each set represented a single line $L$ and each element pertained to the transit distribution according to a specific hour in the day (only military time here). In terms of calculating these actual transition matrices, a first thought was that we could assume that the actual empirical ratios of check-ins at each station compared to all check-ins amounted to the stationary distribution for a specific hour and line, so we&rsquo;d just need to think of a way to derive the transition matrix from its stationary distribution. While this sounded cool and analytic at first, I realized that this would most likely be underspecified, and even if I could come up with some constraints, googling things and trying to be clever like &ldquo;how to solve for $A$ given a known eigenvector and eigenvalue $=1$&rdquo; was unfruitful to the point that I thought maybe it was a dumb question (rip forgetting linear algebra).</p>
 
-<p>At the end of the day I settled for a simple ratio-based test, which might not even be legal, but has some merit along the lines of an MLE approach to estimating transition probabilities directly<sub>2</sub>. Given a subway line but independent of a check-in station, compute the sample probability of the neighboring station in one direction and the neighboring station in the other direction, based on all occurrences of check-ins at those stations. We&rsquo;re not finding the estimates of moving to that station starting from another station directly, because we don&rsquo;t have those numbers, but rather assume that how often someone checks in at a station $s_1$ at any time after a check-in at a neighboring station $s_2$, reasonably approximates the chances of someone coming from a neighboring station $s_2$ choosing to go there, at least compared to the same calculation for an alternative when passengers at $s_2$ can either go to stations $s_1$ or $s_3$.</p>
+<p>At the end of the day I settled for a simple ratio-based test, which might not even be legal, but has some merit along the lines of an MLE approach to estimating transition probabilities directly. Given a subway line but independent of a check-in station, compute the sample probability of the neighboring station in one direction and the neighboring station in the other direction, based on all occurrences of check-ins at those stations. We&rsquo;re not finding the estimates of moving to that station starting from another station directly, because we don&rsquo;t have those numbers, but rather assume that how often someone checks in at a station $s_1$ at any time after a check-in at a neighboring station $s_2$, reasonably approximates the chances of someone coming from a neighboring station $s_2$ choosing to go there, at least compared to the same calculation for an alternative when passengers at $s_2$ can either go to stations $s_1$ or $s_3$.</p>
 
 <p>In slightly more formal notation, the dots in the app move based on transition matrices</p>
 
@@ -245,16 +275,8 @@ $</p>
 <hr />
 
 <ol>
-<li><p>GPS gives you the direction of the path from a satellite view, but from your perspective unless there are obvious landmarks you usually need to walk a bit and then note where you&rsquo;ve moved from the birds-eye view to see if you&rsquo;ve gone in the right direction. It&rsquo;d be great if one could just immediately tell if they needed to turn around.</p></li>
-
-<li><p>One derivation for finding the MLE of transition probability $p_{ij}$ starts off with the definition</p></li>
+<li>GPS gives you the direction of the path from a satellite view, but from your perspective unless there are obvious landmarks you usually need to walk a bit and then note where you&rsquo;ve moved from the birds-eye view to see if you&rsquo;ve gone in the right direction. It&rsquo;d be great if one could just immediately tell if they needed to turn around.</li>
 </ol>
-
-<p>$p<em>{ij} = \text{Pr}(X</em>{t+1} = j \mid X_t = i)$</p>
-
-<p>for random variable at time $t$ denoted $X_t$ and states $i$ and $j$. Let $x^n$ denote sampling a sequence $x_1, x_2, x_3, \ldots, x_n$ from the chain, such that for random sequence $X^n$,</p>
-
-<p>$\text{Pr}(X^n = x^n) = \text{hi}</p>
 
 
 		
@@ -264,7 +286,7 @@ $</p>
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-01-24 21:08:53.706687 -0500 EST m=&#43;0.211362137">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-01-24 21:22:09.575899 -0500 EST m=&#43;0.324094329">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 

@@ -9,6 +9,36 @@
     </title>
 
     
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+    
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -114,7 +144,7 @@
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-01-24 21:08:53.599977 -0500 EST m=&#43;0.104651401">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-01-24 21:22:09.485778 -0500 EST m=&#43;0.233973267">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 
