@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
-            Making Tokyo Metro Markov Models Part 1: The Data Grind &middot; Michael Zhang
+            Making Tokyo Metro Markov Models &middot; Michael Zhang
     </title>
 
     
@@ -48,7 +48,7 @@
 
     
 </div>
-		<h1 class="post-title">Making Tokyo Metro Markov Models Part 1: The Data Grind</h1>
+		<h1 class="post-title">Making Tokyo Metro Markov Models</h1>
 <div class="post-line" style="padding-bottom: 16px"></div>
 
 		
@@ -82,7 +82,7 @@
 </script>
 
 		<div style="margin-bottom: 2em">
-			<i>Going from </i>
+			<i>A sort of technical look into how those glowy bois came to be.</i>
 			
 		    <div class="tag-container">
 		    	Tags: [
@@ -136,9 +136,14 @@
 
 <p>Spend any time searching for animated map visualizations and you&rsquo;re bound to run into some pretty cool projects. There&rsquo;s this pretty famous <a href="http://chriswhong.github.io/nyctaxi/">visualization on NYC taxi trips</a>, and Foursquare themselves published a <a href="https://foursquare.com/infographics/pulse">couple videos</a> displaying Foursquare check-in data over a day in various cities (Tokyo included). The basic idea for these seemed to be organize a bunch of location data that was also time-indexed, then when it comes to viz time fetch the data, set up a time counter, and when clock strikes $x$ present everything related to index $x$ on the frontend. Although I was initially curious if I could get data from past IC card check-ins, in an act of present-self laziness complying with future-self demand to be challenged, I found the <a href="https://www.kaggle.com/chetanism/foursquare-nyc-and-tokyo-checkin-dataset">Foursquare check-in data for 2012-2013</a> in Tokyo pretty quickly on Kaggle and decided to settle for that.</p>
 
-<p>(Image here for check-in data)</p>
+<figure>
+  <img src="/images/006.1-foursquare_data.png"  />
+  <figcaption style="text-align: center">
+      <i>Data courtesy of Foursquare courtesy of Kaggle</i>
+  </figcaption>
+</figure> 
 
-<p>The Foursquare data itself displayed features for the venue, latitude and longitude, and time of the check-in. Since I wanted to capture subway system travel, the main idea would be to filter the check-ins for those that matched the <code>Subway</code> category, figure out where the Subway stations in Tokyo actually were, and cross-reference those to the check-ins to determine when people were visiting specific stops. I probably could have used the Foursquare API to check the venue based on id, but ¯\<em>(ツ)_/¯. Also there was this nice raw JSON file with data on all of Japan&rsquo;s train associated with an npm package called <a href="https://www.npmjs.com/package/japan-train-data">japan-train-data</a>, so more filtering for the subways, but still ¯\</em>(ツ)_/¯ .</p>
+<p>The Foursquare data itself displayed features for the venue, latitude and longitude, and time of the check-in. Since I wanted to capture subway system travel, the main idea would be to filter the check-ins for those that matched the <code>Subway</code> category, figure out where the Subway stations in Tokyo actually were, and cross-reference those to the check-ins to determine when people were visiting specific stops. I probably could have used the Foursquare API to check the venue based on id, but ¯\_(ツ)_/¯. Also there was this nice raw JSON file with data on all of Japan&rsquo;s train associated with an npm package called <a href="https://www.npmjs.com/package/japan-train-data">japan-train-data</a>, so more filtering for the subways, but still ¯\_(ツ)_/¯ .</p>
 
 <p>When it came to actually linking the data sources, I first wanted to reduce potential coordinate noise. Basically, my understanding was that Foursquare users check in on mobile devices based on geolocation data, but as subway stations might be pretty big and the lat/lng coordinates did go up to 8 decimal places, for my visualization&rsquo;s purposes $n$ different passengers might be checking in at the same stop across $n$ different Foursquare locations. Maybe they process this stuff–I&rsquo;ve never used Foursquare–but hey it was easy enough to map check-ins to a reasonable number of locations.</p>
 
@@ -176,49 +181,75 @@ len((df_subway_small[<span style="color:#e6db74">&#39;latitude&#39;</span>]<span
 
 <figure>
   <img src="/images/006.1-metro-unmerged_dfs.png"  />
-  <figcaption style="text-align: center">
-      <i>Data checks out so far.</i>
-  </figcaption>
 </figure>
 
 <p>became this</p>
 
 <figure>
   <img src="/images/006.1-metro-merged_dfs.png"  />
-  <figcaption style="text-align: center">
-      <i>Data checks out so far.</i>
-  </figcaption>
 </figure>
 
 <p>with this</p>
 
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">df_merge_inner <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>merge(df_checkins, df_stations_rounded, how<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;inner&#39;</span>, left_on<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;latitude&#39;</span>, <span style="color:#e6db74">&#39;longitude&#39;</span>], right_on<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;latitude&#39;</span>, <span style="color:#e6db74">&#39;longitude&#39;</span>])</code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span>df_merge_inner <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>merge(df_checkins, df_stations_rounded, how<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;inner&#39;</span>, left_on<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;latitude&#39;</span>, <span style="color:#e6db74">&#39;longitude&#39;</span>], right_on<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;latitude&#39;</span>, <span style="color:#e6db74">&#39;longitude&#39;</span>])</code></pre></div>
 
-<p>By now, my objective was pretty clear with regard to how I wanted to present the data.</p>
+<h2 id="transitioning-with-transition-matrices">Transitioning with Transition Matrices</h2>
 
-<!-- With some experience working with [Mapbox GL](https://docs.mapbox.com/help/glossary/mapbox-gl-js/) and React, I thought th
- -->
+<p>By now, my objective was pretty clear with regard to how I wanted to present the data. While I had timestamps for check-ins, replaying this would have just showed dots popping in and out of a map, which is cool but personally to me not that cool. Instead, I wanted to figure out how to add some sort of motion element. So given just the time-based location data, infer which station comes next for that check-in. This wasn&rsquo;t exactly obvious to me, and also reminded me that vector-inferring GPS would be so much better<sup>1</sup>.</p>
 
-<!-- Python -->
+<p>At the same time, while there was definitely going to be some info aggregation (mapping a whole year&rsquo;s worth of data to a single day), it seemed fairly reasonable that different transit patterns occurred at different parts of the day, and I wanted to capture this as well. I was also curious if travel patterns changed much according to the month and plotted for this, and in hindsight should have also tested for differences in the day of the week.</p>
 
-<!-- I miss winter break. It was really fun just being able to go out to Tokyo, and see everything there. At first, i thought the language barrier would keep us out, and it was just a few days till Shanghai. But now that I look back at it, it really was a great winter break. Not sure I want to leave for school, this is the first time I'm feeling this.  
+<figure>
+  <img src="/images/006.1-metro-time_dists.png"  />
+  <figcaption style="text-align: center">
+      <i>Check-in distributions over hours per day for mostly every other month. Data was available from April 2012 to February 2013, and average check-ins were calculated by the hour across all days in the month.</i>
+  </figcaption>
+</figure> 
 
-Insp
+<p>Overall, it seemed okay to just find the average usage per hour, aggregated over every day in the year.</p>
 
-As I write this, it's been more than a month since my break started, and I still have a last few days to go before it's back to Cambridge. I've always thought of winter break as a time to yes relax, but also an opportunity to do more, as opposed to when all that time is used up by the grind of the semester. For the past two years, I think I've followed this mantra pretty well, working at a Boston-based startup my freshman year and doing a venture capital internship last year. However, as I look back at my junior year break, the paradoxical nature is that I've done a lot, coming away with the most satisfying break yet, yet hour for hour this was also the least structured break. I spent close to two weeks overseas for vacation, with not very much time dedicated each in Tokyo, Hakone, Shanghai, and Beijing, then visited the Bay Area for 168-hour side project grind. 
+<p>Regarding the movement problem again, one idea that seemed kind of cool involved thinking of each stop along a line as a state in a Markov chain. Accordingly, a transition matrix could define the probability given a current station / state of moving to the next station / state. Since each station has at most two neighbors, we&rsquo;d have a rather sparse matrix, expecting most values to be zero.</p>
 
-Thought about hidden markov models, or trying to imagine reasonable constraints to analytically derive the transition matrix that would fit a stationary distribution of every station. At the end of the day I settled for a simple ratio-based test, which might not even be legal. Given a subway line but independent of a check-in station, compute the sample probability of the neighboring station in one direction and the neighboring station in the other direction. For all occurrences, all nonzero elements in the transition matrix for the row corresponding to that station are then found.
+<p>For implementation, I decided to be subway line-specific, constructing a set of transition matrices</p>
 
-Big idea is inferring which station comes next, given only the location data. This wasn't exactly obvious to me, and also reminded me that vector-inferring GPS would be so much better(1)
+<p>$$mathbf{Q}<em>L = {Q</em>{L0}, Q<em>{L1}, \ldots, Q</em>{L23} }$$</p>
 
-(1) GPS gives you the direction of the path from a satellite view, but from your perspective unless there are obvious landmarks you usually need to walk a bit and then note where you've moved from the birds-eye view to see if you've gone in the right direction. It'd be great if one could just immediately tell if they needed to turn around. -->
+<p>where each set represented a single line $L$ and each element pertained to the transit distribution according to a specific hour in the day (only military time here). In terms of calculating these actual transition matrices, a first thought was that we could assume that the actual empirical ratios of check-ins at each station compared to all check-ins amounted to the stationary distribution for a specific hour and line, so we&rsquo;d just need to think of a way to derive the transition matrix from its stationary distribution. While this sounded cool and analytic at first, I realized that this would most likely be underspecified, and even if I could come up with some constraints, googling things and trying to be clever like &ldquo;how to solve for $A$ given a known eigenvector and eigenvalue $=1$&rdquo; was unfruitful to the point that I thought maybe it was a dumb question (rip forgetting linear algebra).</p>
+
+<p>At the end of the day I settled for a simple ratio-based test, which might not even be legal, but has some merit along the lines of an MLE approach to estimating transition probabilities directly<sub>2</sub>. Given a subway line but independent of a check-in station, compute the sample probability of the neighboring station in one direction and the neighboring station in the other direction, based on all occurrences of check-ins at those stations. We&rsquo;re not finding the estimates of moving to that station starting from another station directly, because we don&rsquo;t have those numbers, but rather assume that how often someone checks in at a station $s_1$ at any time after a check-in at a neighboring station $s_2$, reasonably approximates the chances of someone coming from a neighboring station $s_2$ choosing to go there, at least compared to the same calculation for an alternative when passengers at $s_2$ can either go to stations $s_1$ or $s_3$.</p>
+
+<p>In slightly more formal notation, the dots in the app move based on transition matrices</p>
+
+<p>$$
+Q<em>{Lh} = \begin{bmatrix}
+         p</em>{11}\mathbf{I<em>{11}} &amp; p</em>{12}\mathbf{I<em>{12}} &amp; \ldots <br />
+         \vdots &amp; \ddots &amp; <br />
+         p</em>{K1}\mathbf{I<em>{K1}} &amp; &amp; p</em>{KK}\mathbf{I_{12}}
+         \end{bmatrix}
+$$</p>
+
+<p>$$
+p<em>{mn} = \frac{\text{number of check-ins at station $n$ after station $m$}}{\text{number of check-ins at station $m$ overall}}, \text{ (hour and line implicit)}
+$$
+for line $L$ and hour $h$, with $L$ having $K$ station stops, $p</em>{mn}$ being the transition probability from station $m$ to $n$, and $\mathbf{I_{mn}}$ being the indicator for if $m$ and $n$ are neighbors.</p>
+
+<p>And that&rsquo;s it. These empirical probabilities were saved as JSON node and link values according to popular D3 paradigms. From here the majority of the actual front-end design was figured out through other examples, and there are probably many other tutorials out there that can explain things better on that end :).</p>
+
+<p>Check out the visualization <a href="https://michaelzhang.xyz/tokyo-metro-markov-models/">here</a>, and code available <a href="https://github.com/mzio/tokyo-metro-markov-models/tree/master/app">here</a>.</p>
+
+<hr />
+
+<ol>
+<li><p>GPS gives you the direction of the path from a satellite view, but from your perspective unless there are obvious landmarks you usually need to walk a bit and then note where you&rsquo;ve moved from the birds-eye view to see if you&rsquo;ve gone in the right direction. It&rsquo;d be great if one could just immediately tell if they needed to turn around.</p></li>
+
+<li><p>One derivation for finding the MLE of transition probability $p_{ij}$ starts off with the definition</p></li>
+</ol>
+
+<p>$$p<em>{ij} = \text{Pr}(X</em>{t+1} = j \mid X_t = i)$$</p>
+
+<p>for random variable at time $t$ denoted $X_t$ and states $i$ and $j$. Let $x^n$ denote sampling a sequence $x_1, x_2, x_3, \ldots, x_n$ from the chain, such that for random sequence $X^n$,</p>
+
+<p>$\text{Pr}(X^n = x^n) = \text{hi}</p>
 
 
 		
@@ -228,7 +259,7 @@ Big idea is inferring which station comes next, given only the location data. Th
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-01-24 19:21:18.779278 -0500 EST m=&#43;0.195549286">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-01-24 20:57:54.62739 -0500 EST m=&#43;0.229279333">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 
