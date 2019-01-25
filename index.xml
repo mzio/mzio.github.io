@@ -12,12 +12,13 @@
     
     
     <item>
-      <title>Tokyo Metro Markov Models: Data Grind and D3</title>
+      <title>Making Tokyo Metro Markov Models Part 1: The Data Grind</title>
       <link>https://michaelzhang.xyz/posts/006.1-tokyo_metro_markov-inspiration_and_data_grind/</link>
-      <pubDate>Tue, 22 Jan 2019 23:57:50 -0500</pubDate>
+      <pubDate>Wed, 23 Jan 2019 23:57:50 -0500</pubDate>
       
       <guid>https://michaelzhang.xyz/posts/006.1-tokyo_metro_markov-inspiration_and_data_grind/</guid>
-      <description></description>
+      <description>As a follow-up to an earlier post on the real-world experiences / beginning inspiration behind this project (tldr; I was in Japan for three days and it was a lot of fun), I wanted to spend some time documenting how I went about putting together the visualization.
+From the start, there was going to be some backend work and some frontend stuff. Because I wanted to build an app that could run purely client-side, i.</description>
     </item>
     
     <item>

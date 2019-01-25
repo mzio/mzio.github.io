@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
-            Tokyo Metro Markov Models: Data Grind and D3 &middot; Michael Zhang
+            Making Tokyo Metro Markov Models Part 1: The Data Grind &middot; Michael Zhang
     </title>
 
     
@@ -43,12 +43,12 @@
 <main>
 	<div class="post">
 		<div class="post-info">
-    <span>Updated</span><span> on&nbsp;</span><time datetime="2019-01-22 23:57:50 -0500 EST">January 22, 2019</time>
+    <span>Updated</span><span> on&nbsp;</span><time datetime="2019-01-23 23:57:50 -0500 EST">January 23, 2019</time>
         
 
     
 </div>
-		<h1 class="post-title">Tokyo Metro Markov Models: Data Grind and D3</h1>
+		<h1 class="post-title">Making Tokyo Metro Markov Models Part 1: The Data Grind</h1>
 <div class="post-line" style="padding-bottom: 16px"></div>
 
 		
@@ -82,13 +82,133 @@
 </script>
 
 		<div style="margin-bottom: 2em">
-			<i></i>
+			<i>Going from </i>
 			
+		    <div class="tag-container">
+		    	Tags: [
+		        
+		         <span class="tag">
+		            <a href="https://michaelzhang.xyz/tags/data-science">
+		                
+		        <span class="tag">
+		            <a href="https://michaelzhang.xyz/tags/data-science">
+		                data science
+		            </a>
+		        </span> 
+		        
+		         <span class="tag">
+		            <a href="https://michaelzhang.xyz/tags/data-visualization">
+		                
+		            </a>
+		        </span>, 
+		        
+		        <span class="tag">
+		            <a href="https://michaelzhang.xyz/tags/data-visualization">
+		                data visualization
+		            </a>
+		        </span> 
+		        
+		         <span class="tag">
+		            <a href="https://michaelzhang.xyz/tags/projects">
+		                
+		            </a>
+		        </span>, 
+		        
+		        <span class="tag">
+		            <a href="https://michaelzhang.xyz/tags/projects">
+		                projects
+		            </a>
+		        </span> 
+		        ]
+		    </div>
+		    
 		</div>
 		
 	    
 
-		<!-- I miss winter break. It was really fun just being able to go out to Tokyo, and see everything there. At first, i thought the language barrier would keep us out, and it was just a few days till Shanghai. But now that I look back at it, it really was a great winter break. Not sure I want to leave for school, this is the first time I'm feeling this.  
+		
+
+<p>As a follow-up to an <a href="https://michaelzhang.xyz/posts/006-tokyo_metro_markov_chains/">earlier post</a> on the real-world experiences / beginning inspiration behind this <a href="https://michaelzhang.xyz/tokyo-metro-markov-models/">project</a> (tldr; I was in Japan for three days and it was a lot of fun), I wanted to spend some time documenting how I went about putting together the visualization.</p>
+
+<p>From the start, there was going to be some backend work and some frontend stuff. Because I wanted to build an app that could run purely client-side, i.e. hostable on Github Pages, I figured I&rsquo;d do all the processing I wanted first in a notebook, then save the results as JSON files for D3 and React to load up and prettify.</p>
+
+<h2 id="the-data-grind">The Data Grind</h2>
+
+<p>Spend any time searching for animated map visualizations and you&rsquo;re bound to run into some pretty cool projects. There&rsquo;s this pretty famous <a href="http://chriswhong.github.io/nyctaxi/">visualization on NYC taxi trips</a>, and Foursquare themselves published a <a href="https://foursquare.com/infographics/pulse">couple videos</a> displaying Foursquare check-in data over a day in various cities (Tokyo included). The basic idea for these seemed to be organize a bunch of location data that was also time-indexed, then when it comes to viz time fetch the data, set up a time counter, and when clock strikes $x$ present everything related to index $x$ on the frontend. Although I was initially curious if I could get data from past IC card check-ins, in an act of present-self laziness complying with future-self demand to be challenged, I found the <a href="https://www.kaggle.com/chetanism/foursquare-nyc-and-tokyo-checkin-dataset">Foursquare check-in data for 2012-2013</a> in Tokyo pretty quickly on Kaggle and decided to settle for that.</p>
+
+<p>(Image here for check-in data)</p>
+
+<p>The Foursquare data itself displayed features for the venue, latitude and longitude, and time of the check-in. Since I wanted to capture subway system travel, the main idea would be to filter the check-ins for those that matched the <code>Subway</code> category, figure out where the Subway stations in Tokyo actually were, and cross-reference those to the check-ins to determine when people were visiting specific stops. I probably could have used the Foursquare API to check the venue based on id, but ¯\<em>(ツ)_/¯. Also there was this nice raw JSON file with data on all of Japan&rsquo;s train associated with an npm package called <a href="https://www.npmjs.com/package/japan-train-data">japan-train-data</a>, so more filtering for the subways, but still ¯\</em>(ツ)_/¯ .</p>
+
+<p>When it came to actually linking the data sources, I first wanted to reduce potential coordinate noise. Basically, my understanding was that Foursquare users check in on mobile devices based on geolocation data, but as subway stations might be pretty big and the lat/lng coordinates did go up to 8 decimal places, for my visualization&rsquo;s purposes $n$ different passengers might be checking in at the same stop across $n$ different Foursquare locations. Maybe they process this stuff–I&rsquo;ve never used Foursquare–but hey it was easy enough to map check-ins to a reasonable number of locations.</p>
+
+<p>I was interested in the Tokyo&rsquo;s Subway, which actually spans two systems, the Tokyo Metro and the Toei Subway. Together they operate about 280 stations across 13 lines, and with the code below I wanted to find a reasonable number of decimals to keep among check-in data points to get something close to 280.</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">df_subway_small <span style="color:#f92672">=</span> df_subway[[<span style="color:#e6db74">&#39;venueId&#39;</span>, <span style="color:#e6db74">&#39;latitude&#39;</span>, <span style="color:#e6db74">&#39;longitude&#39;</span>, <span style="color:#e6db74">&#39;localTimestamp&#39;</span>]]
+df_subway_small[<span style="color:#e6db74">&#39;latitude&#39;</span>] <span style="color:#f92672">=</span> df_subway_small[<span style="color:#e6db74">&#39;latitude&#39;</span>]<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: np<span style="color:#f92672">.</span>round_(x, decimals<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>))
+df_subway_small[<span style="color:#e6db74">&#39;longitude&#39;</span>] <span style="color:#f92672">=</span> df_subway_small[<span style="color:#e6db74">&#39;longitude&#39;</span>]<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: np<span style="color:#f92672">.</span>round_(x, decimals<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+len((df_subway_small[<span style="color:#e6db74">&#39;latitude&#39;</span>]<span style="color:#f92672">.</span>map(str) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;:&#34;</span> <span style="color:#f92672">+</span> df_subway_small[<span style="color:#e6db74">&#39;longitude&#39;</span>]<span style="color:#f92672">.</span>map(str))<span style="color:#f92672">.</span>unique())</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>On the train data side, it was a matter of finding the relevant properties in the JSON file, and converting these to Pandas dataframes. Because it&rsquo;s always nice to vectorize we first convert to a Dataframe object, filter for subways, and only keep relevant columns. Due to the actually linear nature of subway lines (each stop has at most two neighbors), for each stop we throw in it&rsquo;s neighbors as features as well. Finally, with some planning for the data&rsquo;s prettier future, we include the color hex code for that line.</p>
+
+<!-- While at this point I wasn't exactly sure what the visualization would be like, to keep things somewhat organized and modular I decided to construct a dataframe for each line.  -->
+
+<!-- This is somewhat hacky, but I then save all dataframes into a dictionary hashed by their line names.
+
+<figure>
+  <img src="/images/006.1-metro_line_names.png"  />
+  <figcaption style="text-align: center">
+      <i>Data checks out so far.</i>
+  </figcaption>
+</figure> -->
+
+<p>At this point we have two dataframes–one for the Foursquare check-ins, and one for the stations–and they just need to be merged on location. After rounding, this</p>
+
+<figure>
+  <img src="/images/006.1-metro-unmerged_dfs.png"  />
+  <figcaption style="text-align: center">
+      <i>Data checks out so far.</i>
+  </figcaption>
+</figure>
+
+<p>became this</p>
+
+<figure>
+  <img src="/images/006.1-metro-merged_dfs.png"  />
+  <figcaption style="text-align: center">
+      <i>Data checks out so far.</i>
+  </figcaption>
+</figure>
+
+<p>with this</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">df_merge_inner <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>merge(df_checkins, df_stations_rounded, how<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;inner&#39;</span>, left_on<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;latitude&#39;</span>, <span style="color:#e6db74">&#39;longitude&#39;</span>], right_on<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;latitude&#39;</span>, <span style="color:#e6db74">&#39;longitude&#39;</span>])</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>By now, my objective was pretty clear with regard to how I wanted to present the data.</p>
+
+<!-- With some experience working with [Mapbox GL](https://docs.mapbox.com/help/glossary/mapbox-gl-js/) and React, I thought th
+ -->
+
+<!-- Python -->
+
+<!-- I miss winter break. It was really fun just being able to go out to Tokyo, and see everything there. At first, i thought the language barrier would keep us out, and it was just a few days till Shanghai. But now that I look back at it, it really was a great winter break. Not sure I want to leave for school, this is the first time I'm feeling this.  
 
 Insp
 
@@ -108,7 +228,7 @@ Big idea is inferring which station comes next, given only the location data. Th
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-01-24 15:30:32.632455 -0500 EST m=&#43;0.111689668">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-01-24 19:20:49.343314 -0500 EST m=&#43;0.394179483">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 
