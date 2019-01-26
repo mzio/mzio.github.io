@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Michael Zhang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Jan 2019 23:57:50 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 25 Jan 2019 19:34:04 -0500</lastBuildDate>
     
 	<atom:link href="https://michaelzhang.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Of Markets and Machine Learning</title>
+      <link>https://michaelzhang.xyz/posts/007-ml_markets-01/</link>
+      <pubDate>Fri, 25 Jan 2019 19:34:04 -0500</pubDate>
+      
+      <guid>https://michaelzhang.xyz/posts/007-ml_markets-01/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Making Tokyo Metro Markov Models</title>
