@@ -17,7 +17,13 @@
       <pubDate>Fri, 25 Jan 2019 19:34:04 -0500</pubDate>
       
       <guid>https://michaelzhang.xyz/posts/007-ml_markets-01/</guid>
-      <description></description>
+      <description> Concepts that could be tied together
+* Multimodal fusion
+* Expert selection in a bandit problem
+* Contextual bandits
+* Log scoring market
+Notes / questions
+VAEs  Why does it make sense for $Q$ in KL divergence to depend on $X$? * Have  </description>
     </item>
     
     <item>
