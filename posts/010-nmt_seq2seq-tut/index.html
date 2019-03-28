@@ -124,21 +124,21 @@
 
 <h2 id="n-gram-language-models">n-gram Language Models</h2>
 
-<p>The main issue with these is not being able to capture all possible sentence inputs? We can create a simple maximum likelihood estimator by calculating the probabilities for each word $e<em>t | e</em>{t-1}$, but this is only as strong as if we see these in previous training data examples. N-grams allow us to try to be a bit more flexible.</p>
+<p>The main issue with these is not being able to capture all possible sentence inputs? We can create a simple maximum likelihood estimator by calculating the probabilities for each word $e_t | e_{t-1}$, but this is only as strong as if we see these in previous training data examples. N-grams allow us to try to be a bit more flexible.</p>
 
 <!-- MORE TO COME HERE -->
 
 <h2 id="log-linear-language-models">Log-linear Language Models</h2>
 
-<p>We still want to calculate the probability of a word $e<em>t$ given context $e</em>{t-n+1}^{t-1}. However, we move towards more obviously-looking machine learning models by introducing <strong>features</strong>. We have some feature function $\phi(e_{t-n+1}^{t-1})$ that takes in context and outputs a real-valued <strong>feature vector</strong> $\bm{x} \in \mathbb{R}^N$, that describes the context with $N\$ different features.</p>
+<p>We still want to calculate the probability of a word $e_t$ given context $e_{t-n+1}^{t-1}. However, we move towards more obviously-looking machine learning models by introducing <strong>features</strong>. We have some feature function $\phi(e_{t-n+1}^{t-1})$ that takes in context and outputs a real-valued <strong>feature vector</strong> $\bf x \in \mathbb{R}^N$, that describes the context with $N\$ different features.</p>
 
-<p>In addition to this, we want to use the features to predict probabilities over the output vocabulary $V$, for which we can calculate a score vector $\bm{s} \in \mathbb{R}^{|V|}$ that corresponds to the likelihood of each word. Looking at our model parameters $\theta$ a bit more explicitly now, we can sort them into those belonging to a <strong>bias vector</strong> $\bm{b} \in \mathbb{R}^|V|$ and a <strong>weight matrix</strong> $W = \mathbb{R}^{|V| \times N}$. The bias vector tells us how likely a word is overall, and the weight matrix describes the relationship between feature values and scores. We accordingly end up with</p>
+<p>In addition to this, we want to use the features to predict probabilities over the output vocabulary $V$, for which we can calculate a score vector $\bf s \in \mathbb{R}^{|V|}$ that corresponds to the likelihood of each word. Looking at our model parameters $\theta$ a bit more explicitly now, we can sort them into those belonging to a <strong>bias vector</strong> $\bf b \in \mathbb{R}^|V|$ and a <strong>weight matrix</strong> $\bf W = \mathbb{R}^{|V| \times N}$. The bias vector tells us how likely a word is overall, and the weight matrix describes the relationship between feature values and scores. We accordingly end up with</p>
 
 <p>$$
-\bm{s} = W\bm{x} + \bm{b}
+\bf s = W \bf x + \bf b
 $$</p>
 
-<p>We can then calculate the probabilities for which word to predict (remember our $\bm{s}$ vector size $= |V|$ = size of our vocab). The scores themselves are arbitrary values, but we just want to figure out in relation to any other word what the probability of our model picking that word should be. Doing this with a softmax activation function, we can then match these probabilities to our data using a <strong>negative log likelihood</strong> (NLL) loss function. We want to find parameters $\bm{\theta}$ such that the likelihood of our observed training data is maximized, which is the same as minimizing the negative log likelihood mathematically, but easier to calculate computationally.</p>
+<p>We can then calculate the probabilities for which word to predict (remember our $\bf s$ vector size $= |V|$ = size of our vocab). The scores themselves are arbitrary values, but we just want to figure out in relation to any other word what the probability of our model picking that word should be. Doing this with a softmax activation function, we can then match these probabilities to our data using a <strong>negative log likelihood</strong> (NLL) loss function. We want to find parameters $\bf \theta $ such that the likelihood of our observed training data is maximized, which is the same as minimizing the negative log likelihood mathematically, but easier to calculate computationally.</p>
 
 <p>Some things we can do: adjust learning rate - learning rate decay to drop lr over time; early stopping - note when a model starts overfitting on training data nad stop training then.</p>
 
@@ -156,7 +156,7 @@ $$</p>
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-03-28 14:24:26.654949 -0400 EDT m=&#43;0.097127440">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-03-28 16:56:16.340903 -0400 EDT m=&#43;0.236296459">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 

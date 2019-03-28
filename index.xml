@@ -18,7 +18,7 @@
       
       <guid>https://michaelzhang.xyz/posts/010-nmt_seq2seq-tut/</guid>
       <description>What follows are personal notes and any possible insights to help me understand neural machine translation especially in the context of seq2seq models. All content credit goes to Graham Neubig and his tutorial Neural Machine Translation and Sequence-to-sequence Models: A Tutorial These were done as review for CS 287r.
-n-gram Language Models The main issue with these is not being able to capture all possible sentence inputs? We can create a simple maximum likelihood estimator by calculating the probabilities for each word $et | e{t-1}$, but this is only as strong as if we see these in previous training data examples.</description>
+n-gram Language Models The main issue with these is not being able to capture all possible sentence inputs? We can create a simple maximum likelihood estimator by calculating the probabilities for each word $e_t | e_{t-1}$, but this is only as strong as if we see these in previous training data examples.</description>
     </item>
     
     <item>

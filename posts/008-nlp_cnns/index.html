@@ -134,7 +134,7 @@
 
 <h1 id="compositionality">Compositionality</h1>
 
-<p>Filters compose local patch of lower-level features to higher level ones. Pixels -&gt; edges -&gt; shapes -&gt; objects</p>
+<p>Filters compose local patch of lower-level features to higher level ones. Pixels $\rightarrow$ edges $\rightarrow$ shapes $\rightarrow$ objects</p>
 
 <p>Input for NLP = sentences, documents in a matrix.</p>
 
@@ -147,12 +147,12 @@
 <p>NLP, use filters that are same width as image. Height / region size is based on number of words (2 - 5) typical.</p>
 
 <ul>
-<li>Filters are not usually square then. Also can be variable height. * Feature maps will be (height x 1).</li>
+<li>Filters are not usually square then. Also can be variable height. * Feature maps will be (height $\times$ 1). Example:</li>
 </ul>
 
-<p>ex) 7 x 5 -&gt; (2 x 5, 3 x 5, 4 x 5) -&gt; (6 x 1, 5 x 1, 4 x 1)</p>
+<p>$$7 \times 5 \rightarrow (2 \times 5, 3 \times 5, 4 \times 5) \rightarrow (6 \times 1, 5 \times 1, 4 \times 1) $$</p>
 
-<p>Then max pool -&gt; takes the largest value. Then concatenate. Final softmax takes this feature, uses it to classify.</p>
+<p>Then max pool $\rightarrow$ takes the largest value. Then concatenate. Final softmax takes this feature, uses it to classify.</p>
 
 <p>Location invariance and compositionality don&rsquo;t apply obviously?</p>
 
@@ -172,7 +172,7 @@
 <h3 id="zero-padding">Zero Padding</h3>
 
 <p>Can help preserve shape of feature map. In general, output size is
-$$n_{out} = (n<em>in - n</em>{filter size} + 2n_{padding<em>size}) / n</em>{stride} + 1$$</p>
+$$n_{\text{out}} = (n_{\text{in}} - n_{\text{filter size}} + 2n_{\text{padding_size}}) / n_{\text{stride}} + 1$$</p>
 
 <ul>
 <li>Especially apparent around the edges. How to capture them?</li>
@@ -202,7 +202,7 @@ $$n_{out} = (n<em>in - n</em>{filter size} + 2n_{padding<em>size}) / n</em>{stri
 <p>Max pool helps retain info for if feature appeared in sentence</p>
 
 <ul>
-<li>Lose info on where it appeared. &lt;- This is still useful, but tradeoff. (Sim. to bag of words). Lose global info about locality, but keep local info caught by filters.</li>
+<li>Lose info on where it appeared. This is still useful, but tradeoff. (Sim. to bag of words). Lose global info about locality, but keep local info caught by filters.</li>
 </ul>
 
 <h3 id="channels">Channels</h3>
@@ -230,7 +230,7 @@ $$n_{out} = (n<em>in - n</em>{filter size} + 2n_{padding<em>size}) / n</em>{stri
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-03-28 14:24:26.654884 -0400 EDT m=&#43;0.097062901">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-03-28 16:56:16.340881 -0400 EDT m=&#43;0.236274314">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 
