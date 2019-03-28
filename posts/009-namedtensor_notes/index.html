@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+            Notes on NamedTensor &middot; Michael Zhang
+    </title>
+
+    
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Michael Zhang" />
+</head>
+    
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Michael Zhang</h2>
+				</a>
+				<ul>
+    <li><a href="/about">About</a></li>
+    <li><a href="/posts">Posts</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/">Home</a></li>
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Updated</span><span> on&nbsp;</span><time datetime="2019-02-03 16:55:34 -0500 EST">February 3, 2019</time>
+        
+
+    
+</div>
+		<h1 class="post-title">Notes on NamedTensor</h1>
+<div class="post-line" style="padding-bottom: 16px"></div>
+
+		
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+		<div style="margin-bottom: 2em">
+			<i></i>
+			
+		</div>
+		
+	    
+
+		
+
+<p><a href="http://nlp.seas.harvard.edu/NamedTensor">NamedTensor</a> is a PyTorch library that tries to fix some broken parts of Tensor. As part of <a href="https://harvard-ml-courses.github.io/cs287-web/">CS 287R</a> this year, our class gets to be beta-testing guinea pigs for it.\</p>
+
+<p>While I haven&rsquo;t really worked extensively in PyTorch before, in this post (perhaps the first of many) I&rsquo;ll try to document notes on Tensors and NamedTensor alternatives. Sources will mainly be the <a href="http://nlp.seas.harvard.edu/NamedTensor">NamedTensor blog post</a> written by Sasha Rush&rsquo;s group, and the <a href="https://pytorch.org/docs/stable/">official PyTorch documentation</a>.</p>
+
+<p>Also as a quick note, while I&rsquo;m posting this live, it&rsquo;s by no means complete, and the ending quickly degenerates to my usual self-intended note style. That being said, it&rsquo;s nice to have things up. Hopefully will add to this soon.</p>
+
+<h2 id="tensor-intro">Tensor Intro</h2>
+
+<p>For some quick background, NamedTensor tries to make working with tensors better. What exactly are tensors? They&rsquo;re sort of like multi-dimensional arrays, often used in deep learning frameworks like Torch or TensorFlow.</p>
+
+<p>For example, we can do
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span><span style="color:#f92672">import</span> torch 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2</span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4</span>ims <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>tensor(np<span style="color:#f92672">.</span>load(<span style="color:#e6db74">&#39;test_img.npy&#39;</span>))
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5</span>ims<span style="color:#f92672">.</span>shape</code></pre></div>
+which should output something along the lines of <code>torch.Size([b, h, w, c])</code> noting 4 dimensions corresponding to <em>batch size</em>, <em>height</em>, <em>width</em>, <em>channels</em>.</p>
+
+<h3 id="torch-transpose-input-dim0-dim1-rightarrow-tensor"><code>torch.transpose(input, dim0, dim1) $\rightarrow$ Tensor</code></h3>
+
+<h3 id="broadcasting">Broadcasting</h3>
+
+<p>Binary operations can be performed on arrays of the same size on an element-by-element basis.</p>
+
+<p>Broadcasting allows these operations to be performed on arrays of different sizes. For example, if we had</p>
+
+<pre><code class="language-python">import numpy as np
+a = np.array([4, 5, 6])
+a + 5
+</code></pre>
+
+<p>This would return <code>array([9, 10, 11])</code>. Mentally, we can think of broadcasting as converting <code>5</code> to the array <code>[5, 5, 5]</code>, but this doesn&rsquo;t actually happen in NumPy.</p>
+
+<h3 id="view"><code>View</code></h3>
+
+<p>View is a method belonging to the <code>torch.Tensor</code> object that returns a new tensor in a different shape, dictated by its parameters.</p>
+
+<p>The product of dimensions needs to be consistent for both shapes.</p>
+
+<p>Using <code>-1</code> in place of a number can be used to automatically determine what this dimension value should be. This comes in handy in situations where we might not know how many rows we want (or are too lazy to calculate this beforehand), but do know the number of columns.</p>
+
+<h3 id="squeeze"><code>Squeeze</code></h3>
+
+<p>Called with <code>torch.squeeze(_input_, _dim_=None, _out=None_) $\rightarrow$ Tensor</code></p>
+
+<p>Returns a new tensor with all dimensions of size 1 removed. For example, if the input is of shape $(A \times 1 \times B)$, calling <code>squeeze</code> will return a tensor with shape $(A \times B)$.</p>
+
+<p>If <code>dim</code> is present, then we only squeeze on that given dimension. For example, if the input is of shape $(A \times 1 \times B)$ and we call <code>squeeze(input, 0)</code>, this won&rsquo;t do anything. But calling <code>squeeze(input)</code> or <code>squeeze(input, 1)</code> will return the &ldquo;squeezed&rdquo; tensor of shape $(A \times B)$.</p>
+
+<p>Squeeze can be undone with <code>unsqueeze</code>, which takes in an <code>input</code> but also requires a <code>dim</code>. The method returns a new tensor with <code>dime</code> 1 inserted at the specific position, but still shares the input data. Example: with <code>x = torch.tensor([1, 2, 3])</code>, <code>torch.unsqueeze(x, 0)</code> will output a tensor with <code>dim</code> $(1 \times 3)$, and <code>torch.unsqueeze(x, -1)</code> will output a tensor with <code>dim</code> $(3 \times 1)$.</p>
+
+<h2 id="namedfield">NamedField</h2>
+
+<p>Documentation notes for implementing <code>NamedField</code>.<br />
+* <code>NamedField</code> inherits from <code>torchtext.data.Field</code><br />
+  * Most (all except names?) of its parameters come from this<br />
+The additional param <code>name</code> is used to specify a <code>names</code> property, which might be useful? Defaults to <code>&quot;seqlen&quot;,  
+</code></p>
+
+<h4 id="torchtext-data-field"><code>torchtext.data.Field</code></h4>
+
+<p>According to the docs, this defines a datatype and instructions for converting to Tensor<br />
+* <code>Vocab</code> obj defines set of possible values for elements</p>
+
+<p>Parameters:<br />
+* <code>sequential</code>: whether datatype should be sequential. Default is <code>True</code>.<br />
+* <code>use_vocab</code>: whether to use vocab object. If False, data should already be numerical. Default is <code>True</code>.<br />
+* <code>unk_token</code>: string token to represent words not in the vocab: Default is <code>'&lt;unk&gt;'</code>, but in the 287 pset is set to <code>None</code>.</p>
+
+<h3 id="torchtext-datasets-sst-splits"><code>torchtext.datasets.SST.splits</code></h3>
+
+<p>This should create dataset objects for splits of the SST dataset<br />
+* We specify which fields are used for the sentence and labels<br />
+  * So this determines how we process the dataset
+* Params are opinionated for SST, because we only have the sentence and the sentiment / label, so we just need to specify the fields for these</p>
+
+<h3 id="torchtext-data-field-build-vocab"><code>torchtext.data.Field.build_vocab</code></h3>
+
+<p>Constructs the Vocab object for this field from one or more datasets<br />
+* Calling <code>TEXT.build_vocab(train)</code> goes through all elements in the training set, checks contents for the <code>TEXT</code> field (sentences), and registers words to the vocab</p>
+
+<p><code>vocab</code> is an object used to numericalize a field.<br />
+* Holds mapping from word to id in <code>stoi</code> attribute, and mapping from id to word in <code>itos</code> attribute.<br />
+  * Can also automatically build an embedding matrix with pretrained embeddings (word2vec)<br />
+  * Other params:<br />
+    * <code>max_size</code>: sets the max size of the vocab. Default: <code>None</code>.<br />
+    * <code>min_freq</code>: sets lower bound for number of times word needs to appear to be considered in the vocab. Default: <code>1</code>.<br />
+_<strong>Question</strong>: what is vocab?_<br />
+This is the set of words we&rsquo;re allowed to work with</p>
+
+<p>When feeding sentences into the model, we feed a batch of them at a time<br />
+* More than one, but all sentences need to be the same size, so any shorter than the longest are padded with <code>&lt;pad&gt;</code></p>
+
+<p>Labels denote a 0 for positive and 1 for negative, which is weird.</p>
+
+<h2 id="list-of-things-not-implemented">List of things not implemented:</h2>
+
+<p>nn.torch.functional<br />
+* Sigmoid (nn.torch.Sigmoid)<br />
+* LogSoftmax (nn.torch.LogSoftmax)<br />
+* BCELoss</p>
+
+
+		
+	</div>
+</main>
+
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2019-03-28 14:19:37.167436 -0400 EDT m=&#43;0.281094779">2019</time>. Michael Zhang. H' 2020. 
+			</span>
+		</footer>
+
+    </body>
+</html>

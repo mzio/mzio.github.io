@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+            CNNs for NLP &middot; Michael Zhang
+    </title>
+
+    
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Michael Zhang" />
+</head>
+    
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Michael Zhang</h2>
+				</a>
+				<ul>
+    <li><a href="/about">About</a></li>
+    <li><a href="/posts">Posts</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/">Home</a></li>
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Updated</span><span> on&nbsp;</span><time datetime="2019-02-02 17:25:11 -0500 EST">February 2, 2019</time>
+        
+
+    
+</div>
+		<h1 class="post-title">CNNs for NLP</h1>
+<div class="post-line" style="padding-bottom: 16px"></div>
+
+		
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+		<div style="margin-bottom: 2em">
+			<i>An intuitive look at one 3-letter acronym ML concept applied to another</i>
+			
+		</div>
+		
+	    
+
+		
+
+<p>I&rsquo;ve always believed that a better way to learn things is to explain them to others. It&rsquo;s part of why I teach in college. When I started thinking about the merits of a blog, writing about more technical things as a way to ground concepts for myself was definitely a plus. \</p>
+
+<p>This semester, I&rsquo;m taking <a href="https://harvard-ml-courses.github.io/cs287-web/">CS 287R</a>, a class at Harvard that deals with NLP and increasingly deep learning. Aside from this class, there are also</p>
+
+<p>Think of filters as ways to build up higher-level features, which can then aid in classification at the end</p>
+
+<h1 id="location-invariance">Location Invariance</h1>
+
+<ul>
+<li>Convolutions just slide over entire image. Doesn&rsquo;t matter where objects occur. Pooling</li>
+</ul>
+
+<h1 id="compositionality">Compositionality</h1>
+
+<p>Filters compose local patch of lower-level features to higher level ones. Pixels -&gt; edges -&gt; shapes -&gt; objects</p>
+
+<p>Input for NLP = sentences, documents in a matrix.<br />
+* Each row is one token (word / character)<br />
+* Vectors are word embeddings (low-dimension representations) or one-hot vectors (word is index in vocab)<br />
+* e.g. 10 word sentence w/ 100D embedding -&gt; 10 * 100 as input</p>
+
+<p>NLP, use filters that are same width as image. Height / region size is based on number of words (2 - 5) typical.<br />
+* Filters are not usually square then. Also can be variable height.  * Feature maps will be (height x 1).</p>
+
+<p>ex) 7 x 5 -&gt; (2 x 5, 3 x 5, 4 x 5) -&gt; (6 x 1, 5 x 1, 4 x 1)</p>
+
+<p>Then max pool -&gt; takes the largest value. Then concatenate. Final softmax takes this feature, uses it to classify.</p>
+
+<p>Location invariance and compositionality don&rsquo;t apply obviously?<br />
+* It does matter where words are. Also words build up, not obvious how so like pixels to edges.<br />
+* CNNs still work? Motivation for RNNs</p>
+
+<p>Why CNNs<br />
+* Very fast, efficient in representation. Conv filters leran good reps automatically w/o represented entire vocab</p>
+
+<h2 id="cnn-parameters">CNN parameters</h2>
+
+<h3 id="zero-padding">Zero Padding</h3>
+
+<p>Can help preserve shape of feature map. In general, output size is
+$$n_{out} = (n<em>in - n</em>{filter size} + 2n_{padding<em>size}) / n</em>{stride} + 1$$<br />
+* Especially apparent around the edges. How to capture them?</p>
+
+<h3 id="stride-size">Stride size</h3>
+
+<p>Larger stride leads to fewer applications of filter and smaller output.
+* Larger stride size helps build model similar to RNN / looks like a tree?<br />
+* In practice stride is 1</p>
+
+<h3 id="pooling">Pooling</h3>
+
+<p>Subsample their input. Common: max operation to each filter. Can also just pool over a window.
+* Fixed size output matrix (req. for classification)<br />
+  * 1000 filters, with max pooling to each -&gt; 1000 output (regardless of filter or input size)</p>
+
+<p>Max pool helps retain info for if feature appeared in sentence<br />
+* Lose info on where it appeared. &lt;- This is still useful, but tradeoff. (Sim. to bag of words). Lose global info about locality, but keep local info caught by filters.</p>
+
+<h3 id="channels">Channels</h3>
+
+<p>Different views of input data (r, g, b) for images.
+* Separate channels could be useful for different embeddings.</p>
+
+<hr />
+
+<p>References:<br />
+1. [Understanding Convolutional Neural Networks for NLP - Denny Britz]<br />
+2. Anecdote shared by Kanjun Qin, founder at Sourceress.</p>
+
+
+		
+	</div>
+</main>
+
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2019-03-28 14:19:37.075799 -0400 EDT m=&#43;0.189457082">2019</time>. Michael Zhang. H' 2020. 
+			</span>
+		</footer>
+
+    </body>
+</html>

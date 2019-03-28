@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://michaelzhang.xyz/posts/010-nmt_seq2seq-tut/</loc>
+    <lastmod>2019-02-27T14:44:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://michaelzhang.xyz/posts/009-namedtensor_notes/</loc>
+    <lastmod>2019-02-03T16:55:34-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://michaelzhang.xyz/posts/008-nlp_cnns/</loc>
+    <lastmod>2019-02-02T17:25:11-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://michaelzhang.xyz/posts/007-ml_markets-01/</loc>
     <lastmod>2019-01-25T19:34:04-05:00</lastmod>
   </url>
@@ -108,7 +123,7 @@
   
   <url>
     <loc>https://michaelzhang.xyz/posts/</loc>
-    <lastmod>2019-01-25T19:34:04-05:00</lastmod>
+    <lastmod>2019-02-27T14:44:09-05:00</lastmod>
     <priority>0</priority>
   </url>
   
