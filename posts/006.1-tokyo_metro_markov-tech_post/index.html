@@ -255,14 +255,14 @@ len((df_subway_small[<span style="color:#e6db74">&#39;latitude&#39;</span>]<span
 <p>In slightly more formal notation, the dots in the app move based on transition matrices</p>
 
 <p>$$
-         \begin{bmatrix}
+         \begin{p matrix}
          p_{11}\bf I_{11} &amp; p_{12}\bf I_{12} &amp; \ldots <br />
          \vdots &amp; \ddots &amp; <br />
          p_{K1}\bf I_{K1} &amp; &amp; p_{KK}\bf I_{12}
-         \end{bmatrix}
+         \end{p matrix}
 $$</p>
 
-<p>for line $L$ and hour $h$, with $L$ having $K$ station stops, $p_{mn}$ being the transition probability from station $m$ to $n$, and $\mathbf{I_{mn}}$ being the indicator for if $m$ and $n$ are neighbors.</p>
+<p>for line $L$ and hour $h$, with $L$ having $K$ station stops, $p_{mn}$ being the transition probability from station $m$ to $n$, and $\bf I_{mn}$ being the indicator for if $m$ and $n$ are neighbors.</p>
 
 <p>And that&rsquo;s it. These empirical probabilities were saved as JSON node and link values according to popular D3 paradigms. From here the majority of the actual front-end design was figured out through other examples, and there are probably many other tutorials out there that can explain things better on that end :).</p>
 
@@ -282,7 +282,7 @@ $$</p>
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-03-28 17:00:07.314265 -0400 EDT m=&#43;0.309117698">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-03-28 17:02:41.837237 -0400 EDT m=&#43;0.285215716">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 
