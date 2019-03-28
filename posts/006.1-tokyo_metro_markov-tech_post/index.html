@@ -246,7 +246,7 @@ len((df_subway_small[<span style="color:#e6db74">&#39;latitude&#39;</span>]<span
 
 <p>For implementation, I decided to be subway line-specific, constructing a set of transition matrices</p>
 
-<p>$$\bf Q_L = {Q_{L_0}, Q_{L_1}, \ldots, Q_{L_}23}} }$$</p>
+<p>$$\bf Q_L = {Q_{L_0}, Q_{L_1}, \ldots, Q_{L_{23} }$$</p>
 
 <p>where each set represented a single line $L$ and each element pertained to the transit distribution according to a specific hour in the day (only military time here). In terms of calculating these actual transition matrices, a first thought was that we could assume that the actual empirical ratios of check-ins at each station compared to all check-ins amounted to the stationary distribution for a specific hour and line, so we&rsquo;d just need to think of a way to derive the transition matrix from its stationary distribution. While this sounded cool and analytic at first, I realized that this would most likely be underspecified, and even if I could come up with some constraints, googling things and trying to be clever like &ldquo;how to solve for $A$ given a known eigenvector and eigenvalue $=1$&rdquo; was unfruitful to the point that I thought maybe it was a dumb question (rip forgetting linear algebra).</p>
 
@@ -282,7 +282,7 @@ $$</p>
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-03-28 17:05:29.881493 -0400 EDT m=&#43;0.230459847">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-03-28 17:06:21.082763 -0400 EDT m=&#43;0.302534747">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 
