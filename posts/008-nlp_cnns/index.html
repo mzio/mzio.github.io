@@ -136,58 +136,91 @@
 
 <p>Filters compose local patch of lower-level features to higher level ones. Pixels -&gt; edges -&gt; shapes -&gt; objects</p>
 
-<p>Input for NLP = sentences, documents in a matrix.<br />
-* Each row is one token (word / character)<br />
-* Vectors are word embeddings (low-dimension representations) or one-hot vectors (word is index in vocab)<br />
-* e.g. 10 word sentence w/ 100D embedding -&gt; 10 * 100 as input</p>
+<p>Input for NLP = sentences, documents in a matrix.</p>
 
-<p>NLP, use filters that are same width as image. Height / region size is based on number of words (2 - 5) typical.<br />
-* Filters are not usually square then. Also can be variable height.  * Feature maps will be (height x 1).</p>
+<ul>
+<li>Each row is one token (word / character)</li>
+<li>Vectors are word embeddings (low-dimension representations) or one-hot vectors (word is index in vocab)</li>
+<li>e.g. 10 word sentence w/ 100D embedding -&gt; 10 * 100 as input</li>
+</ul>
+
+<p>NLP, use filters that are same width as image. Height / region size is based on number of words (2 - 5) typical.</p>
+
+<ul>
+<li>Filters are not usually square then. Also can be variable height. * Feature maps will be (height x 1).</li>
+</ul>
 
 <p>ex) 7 x 5 -&gt; (2 x 5, 3 x 5, 4 x 5) -&gt; (6 x 1, 5 x 1, 4 x 1)</p>
 
 <p>Then max pool -&gt; takes the largest value. Then concatenate. Final softmax takes this feature, uses it to classify.</p>
 
-<p>Location invariance and compositionality don&rsquo;t apply obviously?<br />
-* It does matter where words are. Also words build up, not obvious how so like pixels to edges.<br />
-* CNNs still work? Motivation for RNNs</p>
+<p>Location invariance and compositionality don&rsquo;t apply obviously?</p>
 
-<p>Why CNNs<br />
-* Very fast, efficient in representation. Conv filters leran good reps automatically w/o represented entire vocab</p>
+<ul>
+<li>It does matter where words are. Also words build up, not obvious how so like pixels to edges.</li>
+<li>CNNs still work? Motivation for RNNs</li>
+</ul>
+
+<p>Why CNNs</p>
+
+<ul>
+<li>Very fast, efficient in representation. Conv filters leran good reps automatically w/o represented entire vocab</li>
+</ul>
 
 <h2 id="cnn-parameters">CNN parameters</h2>
 
 <h3 id="zero-padding">Zero Padding</h3>
 
 <p>Can help preserve shape of feature map. In general, output size is
-$$n_{out} = (n<em>in - n</em>{filter size} + 2n_{padding<em>size}) / n</em>{stride} + 1$$<br />
-* Especially apparent around the edges. How to capture them?</p>
+$$n_{out} = (n<em>in - n</em>{filter size} + 2n_{padding<em>size}) / n</em>{stride} + 1$$</p>
+
+<ul>
+<li>Especially apparent around the edges. How to capture them?</li>
+</ul>
 
 <h3 id="stride-size">Stride size</h3>
 
-<p>Larger stride leads to fewer applications of filter and smaller output.
-* Larger stride size helps build model similar to RNN / looks like a tree?<br />
-* In practice stride is 1</p>
+<p>Larger stride leads to fewer applications of filter and smaller output.</p>
+
+<ul>
+<li>Larger stride size helps build model similar to RNN / looks like a tree?</li>
+<li>In practice stride is 1</li>
+</ul>
 
 <h3 id="pooling">Pooling</h3>
 
-<p>Subsample their input. Common: max operation to each filter. Can also just pool over a window.
-* Fixed size output matrix (req. for classification)<br />
-  * 1000 filters, with max pooling to each -&gt; 1000 output (regardless of filter or input size)</p>
+<p>Subsample their input. Common: max operation to each filter. Can also just pool over a window.</p>
 
-<p>Max pool helps retain info for if feature appeared in sentence<br />
-* Lose info on where it appeared. &lt;- This is still useful, but tradeoff. (Sim. to bag of words). Lose global info about locality, but keep local info caught by filters.</p>
+<ul>
+<li>Fixed size output matrix (req. for classification)
+
+<ul>
+<li>1000 filters, with max pooling to each -&gt; 1000 output (regardless of filter or input size)</li>
+</ul></li>
+</ul>
+
+<p>Max pool helps retain info for if feature appeared in sentence</p>
+
+<ul>
+<li>Lose info on where it appeared. &lt;- This is still useful, but tradeoff. (Sim. to bag of words). Lose global info about locality, but keep local info caught by filters.</li>
+</ul>
 
 <h3 id="channels">Channels</h3>
 
-<p>Different views of input data (r, g, b) for images.
-* Separate channels could be useful for different embeddings.</p>
+<p>Different views of input data (r, g, b) for images.</p>
+
+<ul>
+<li>Separate channels could be useful for different embeddings.</li>
+</ul>
 
 <hr />
 
-<p>References:<br />
-1. [Understanding Convolutional Neural Networks for NLP - Denny Britz]<br />
-2. Anecdote shared by Kanjun Qin, founder at Sourceress.</p>
+<p>References:</p>
+
+<ol>
+<li>[Understanding Convolutional Neural Networks for NLP - Denny Britz]</li>
+<li>Anecdote shared by Kanjun Qin, founder at Sourceress.</li>
+</ol>
 
 
 		
@@ -197,7 +230,7 @@ $$n_{out} = (n<em>in - n</em>{filter size} + 2n_{padding<em>size}) / n</em>{stri
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-03-28 14:20:29.771219 -0400 EDT m=&#43;0.198300782">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-03-28 14:23:49.061966 -0400 EDT m=&#43;0.196268225">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 

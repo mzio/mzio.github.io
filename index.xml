@@ -48,11 +48,7 @@ This semester, I&amp;rsquo;m taking CS 287R, a class at Harvard that deals with 
       
       <guid>https://michaelzhang.xyz/posts/007-ml_markets-01/</guid>
       <description> Concepts that could be tied together
-* Multimodal fusion
-* Expert selection in a bandit problem
-* Contextual bandits
-* Log scoring market
-Notes / questions
+ Multimodal fusion Expert selection in a bandit problem Contextual bandits Log scoring market  Notes / questions
 VAEs  Why does it make sense for $Q$ in KL divergence to depend on $X$? * Have  </description>
     </item>
     

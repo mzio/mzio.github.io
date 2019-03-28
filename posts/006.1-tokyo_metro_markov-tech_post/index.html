@@ -160,7 +160,7 @@
 
 <figure>
   <img src="/images/006-tokyo_metro_markov_models-preview.png"  />
-</figure> 
+</figure>
 
 <p>As a follow-up to an <a href="https://michaelzhang.xyz/posts/006-tokyo_metro_markov_chains/">earlier post</a> on the real-world experiences / beginning inspiration behind this <a href="https://michaelzhang.xyz/tokyo-metro-markov-models/">project</a> (tldr; I was in Japan for three days and it was a lot of fun), I wanted to spend some time documenting how I went about putting together the visualization.</p>
 
@@ -175,7 +175,7 @@
   <figcaption style="text-align: center">
       <i>Data courtesy of Foursquare courtesy of Kaggle</i>
   </figcaption>
-</figure> 
+</figure>
 
 <p>The Foursquare data itself displayed features for the venue, latitude and longitude, and time of the check-in. Since I wanted to capture subway system travel, the main idea would be to filter the check-ins for those that matched the <code>Subway</code> category, figure out where the Subway stations in Tokyo actually were, and cross-reference those to the check-ins to determine when people were visiting specific stops. I probably could have used the Foursquare API to check the venue based on id, but ¯\_(ツ)_/¯. Also there was this nice raw JSON file with data on all of Japan&rsquo;s train associated with an npm package called <a href="https://www.npmjs.com/package/japan-train-data">japan-train-data</a>, so more filtering for the subways, but still ¯\_(ツ)_/¯ .</p>
 
@@ -191,9 +191,9 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">df_subway_small <span style="color:#f92672">=</span> df_subway[[<span style="color:#e6db74">&#39;venueId&#39;</span>, <span style="color:#e6db74">&#39;latitude&#39;</span>, <span style="color:#e6db74">&#39;longitude&#39;</span>, <span style="color:#e6db74">&#39;localTimestamp&#39;</span>]]
-df_subway_small[<span style="color:#e6db74">&#39;latitude&#39;</span>] <span style="color:#f92672">=</span> df_subway_small[<span style="color:#e6db74">&#39;latitude&#39;</span>]<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: np<span style="color:#f92672">.</span>round_(x, decimals<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>))
-df_subway_small[<span style="color:#e6db74">&#39;longitude&#39;</span>] <span style="color:#f92672">=</span> df_subway_small[<span style="color:#e6db74">&#39;longitude&#39;</span>]<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: np<span style="color:#f92672">.</span>round_(x, decimals<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">df<span style="color:#f92672">*</span>subway_small <span style="color:#f92672">=</span> df_subway[[<span style="color:#e6db74">&#39;venueId&#39;</span>, <span style="color:#e6db74">&#39;latitude&#39;</span>, <span style="color:#e6db74">&#39;longitude&#39;</span>, <span style="color:#e6db74">&#39;localTimestamp&#39;</span>]]
+df_subway_small[<span style="color:#e6db74">&#39;latitude&#39;</span>] <span style="color:#f92672">=</span> df_subway_small[<span style="color:#e6db74">&#39;latitude&#39;</span>]<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: np<span style="color:#f92672">.</span>round<span style="color:#f92672">*</span>(x, decimals<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>))
+df<span style="color:#f92672">*</span>subway_small[<span style="color:#e6db74">&#39;longitude&#39;</span>] <span style="color:#f92672">=</span> df_subway_small[<span style="color:#e6db74">&#39;longitude&#39;</span>]<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: np<span style="color:#f92672">.</span>round<span style="color:#f92672">*</span>(x, decimals<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
 len((df_subway_small[<span style="color:#e6db74">&#39;latitude&#39;</span>]<span style="color:#f92672">.</span>map(str) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;:&#34;</span> <span style="color:#f92672">+</span> df_subway_small[<span style="color:#e6db74">&#39;longitude&#39;</span>]<span style="color:#f92672">.</span>map(str))<span style="color:#f92672">.</span>unique())</code></pre></td></tr></table>
 </div>
 </div>
@@ -238,7 +238,7 @@ len((df_subway_small[<span style="color:#e6db74">&#39;latitude&#39;</span>]<span
   <figcaption style="text-align: center">
       <i>Check-in distributions over hours per day for mostly every other month. Data was available from April 2012 to February 2013, and average check-ins were calculated by the hour across all days in the month.</i>
   </figcaption>
-</figure> 
+</figure>
 
 <p>Overall, it seemed okay to just find the average usage per hour, aggregated over every day in the year.</p>
 
@@ -254,13 +254,12 @@ len((df_subway_small[<span style="color:#e6db74">&#39;latitude&#39;</span>]<span
 
 <p>In slightly more formal notation, the dots in the app move based on transition matrices</p>
 
-<p>$$Q<em>{Lh} = \begin{bmatrix}
-         p</em>{11}\mathbf{I<em>{11}} &amp; p</em>{12}\mathbf{I<em>{12}} &amp; \ldots <br />
+<p>$$
+         p<em>{11}\mathbf{I</em>{11}} &amp; p<em>{12}\mathbf{I</em>{12}} &amp; \ldots <br />
          \vdots &amp; \ddots &amp; <br />
-         p</em>{K1}\mathbf{I<em>{K1}} &amp; &amp; p</em>{KK}\mathbf{I_{12}}
-         \end{bmatrix}$$</p>
-
-<p>$$p_{mn} = \frac{\text{number of check-ins at station $n$ after station $m$}}{\text{number of check-ins at station $m$ overall}}, \text{ (hour and line implicit)}$$</p>
+         p<em>{K1}\mathbf{I</em>{K1}} &amp; &amp; p<em>{KK}\mathbf{I</em>{12}}
+         \end{bmatrix}$$
+$$</p>
 
 <p>for line $L$ and hour $h$, with $L$ having $K$ station stops, $p<em>{mn}$ being the transition probability from station $m$ to $n$, and $\mathbf{I</em>{mn}}$ being the indicator for if $m$ and $n$ are neighbors.</p>
 
@@ -282,7 +281,7 @@ len((df_subway_small[<span style="color:#e6db74">&#39;latitude&#39;</span>]<span
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-03-28 14:20:29.861435 -0400 EDT m=&#43;0.288516122">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-03-28 14:23:49.165647 -0400 EDT m=&#43;0.299948906">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 

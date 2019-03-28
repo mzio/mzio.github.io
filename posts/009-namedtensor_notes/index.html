@@ -131,12 +131,12 @@
 <p>For some quick background, NamedTensor tries to make working with tensors better. What exactly are tensors? They&rsquo;re sort of like multi-dimensional arrays, often used in deep learning frameworks like Torch or TensorFlow.</p>
 
 <p>For example, we can do
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span><span style="color:#f92672">import</span> torch 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2</span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span><span style="color:#f92672">import</span> torch
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2</span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4</span>ims <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>tensor(np<span style="color:#f92672">.</span>load(<span style="color:#e6db74">&#39;test_img.npy&#39;</span>))
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4</span>ims <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>tensor(np<span style="color:#f92672">.</span>load(<span style="color:#e6db74">&#39;test*img.npy&#39;</span>))
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5</span>ims<span style="color:#f92672">.</span>shape</code></pre></div>
-which should output something along the lines of <code>torch.Size([b, h, w, c])</code> noting 4 dimensions corresponding to <em>batch size</em>, <em>height</em>, <em>width</em>, <em>channels</em>.</p>
+which should output something along the lines of <code>torch.Size([b, h, w, c])</code> noting 4 dimensions corresponding to _batch size*, <em>height</em>, <em>width</em>, <em>channels</em>.</p>
 
 <h3 id="torch-transpose-input-dim0-dim1-rightarrow-tensor"><code>torch.transpose(input, dim0, dim1) $\rightarrow$ Tensor</code></h3>
 
@@ -173,54 +173,82 @@ a + 5
 
 <h2 id="namedfield">NamedField</h2>
 
-<p>Documentation notes for implementing <code>NamedField</code>.<br />
-* <code>NamedField</code> inherits from <code>torchtext.data.Field</code><br />
-  * Most (all except names?) of its parameters come from this<br />
-The additional param <code>name</code> is used to specify a <code>names</code> property, which might be useful? Defaults to <code>&quot;seqlen&quot;,  
-</code></p>
+<p>Documentation notes for implementing <code>NamedField</code>.</p>
+
+<ul>
+<li><code>NamedField</code> inherits from <code>torchtext.data.Field</code>
+
+<ul>
+<li>Most (all except names?) of its parameters come from this<br />
+The additional param <code>name</code> is used to specify a <code>names</code> property, which might be useful? Defaults to <code>&quot;seqlen&quot;,</code></li>
+</ul></li>
+</ul>
 
 <h4 id="torchtext-data-field"><code>torchtext.data.Field</code></h4>
 
-<p>According to the docs, this defines a datatype and instructions for converting to Tensor<br />
-* <code>Vocab</code> obj defines set of possible values for elements</p>
+<p>According to the docs, this defines a datatype and instructions for converting to Tensor</p>
 
-<p>Parameters:<br />
-* <code>sequential</code>: whether datatype should be sequential. Default is <code>True</code>.<br />
-* <code>use_vocab</code>: whether to use vocab object. If False, data should already be numerical. Default is <code>True</code>.<br />
-* <code>unk_token</code>: string token to represent words not in the vocab: Default is <code>'&lt;unk&gt;'</code>, but in the 287 pset is set to <code>None</code>.</p>
+<ul>
+<li><code>Vocab</code> obj defines set of possible values for elements</li>
+</ul>
+
+<p>Parameters:</p>
+
+<ul>
+<li><code>sequential</code>: whether datatype should be sequential. Default is <code>True</code>.</li>
+<li><code>use_vocab</code>: whether to use vocab object. If False, data should already be numerical. Default is <code>True</code>.</li>
+<li><code>unk_token</code>: string token to represent words not in the vocab: Default is <code>'&lt;unk&gt;'</code>, but in the 287 pset is set to <code>None</code>.</li>
+</ul>
 
 <h3 id="torchtext-datasets-sst-splits"><code>torchtext.datasets.SST.splits</code></h3>
 
-<p>This should create dataset objects for splits of the SST dataset<br />
-* We specify which fields are used for the sentence and labels<br />
-  * So this determines how we process the dataset
-* Params are opinionated for SST, because we only have the sentence and the sentiment / label, so we just need to specify the fields for these</p>
+<p>This should create dataset objects for splits of the SST dataset</p>
+
+<ul>
+<li>We specify which fields are used for the sentence and labels
+
+<ul>
+<li>So this determines how we process the dataset</li>
+</ul></li>
+<li>Params are opinionated for SST, because we only have the sentence and the sentiment / label, so we just need to specify the fields for these</li>
+</ul>
 
 <h3 id="torchtext-data-field-build-vocab"><code>torchtext.data.Field.build_vocab</code></h3>
 
-<p>Constructs the Vocab object for this field from one or more datasets<br />
-* Calling <code>TEXT.build_vocab(train)</code> goes through all elements in the training set, checks contents for the <code>TEXT</code> field (sentences), and registers words to the vocab</p>
+<p>Constructs the Vocab object for this field from one or more datasets</p>
 
-<p><code>vocab</code> is an object used to numericalize a field.<br />
-* Holds mapping from word to id in <code>stoi</code> attribute, and mapping from id to word in <code>itos</code> attribute.<br />
-  * Can also automatically build an embedding matrix with pretrained embeddings (word2vec)<br />
-  * Other params:<br />
-    * <code>max_size</code>: sets the max size of the vocab. Default: <code>None</code>.<br />
-    * <code>min_freq</code>: sets lower bound for number of times word needs to appear to be considered in the vocab. Default: <code>1</code>.<br />
-_<strong>Question</strong>: what is vocab?_<br />
-This is the set of words we&rsquo;re allowed to work with</p>
+<ul>
+<li>Calling <code>TEXT.build_vocab(train)</code> goes through all elements in the training set, checks contents for the <code>TEXT</code> field (sentences), and registers words to the vocab</li>
+</ul>
 
-<p>When feeding sentences into the model, we feed a batch of them at a time<br />
-* More than one, but all sentences need to be the same size, so any shorter than the longest are padded with <code>&lt;pad&gt;</code></p>
+<p><code>vocab</code> is an object used to numericalize a field.</p>
+
+<ul>
+<li>Holds mapping from word to id in <code>stoi</code> attribute, and mapping from id to word in <code>itos</code> attribute.
+
+<ul>
+<li>Can also automatically build an embedding matrix with pretrained embeddings (word2vec)</li>
+<li>Other params:<br />
+_ <code>max_size</code>: sets the max size of the vocab. Default: <code>None</code>.<br />
+_ <code>min_freq</code>: sets lower bound for number of times word needs to appear to be considered in the vocab. Default: <code>1</code>.<br />
+<strong>_Question</strong>: what is vocab?_<br />
+This is the set of words we&rsquo;re allowed to work with</li>
+</ul></li>
+</ul>
+
+<p>When feeding sentences into the model, we feed a batch of them at a time</p>
+
+<ul>
+<li>More than one, but all sentences need to be the same size, so any shorter than the longest are padded with <code>&lt;pad&gt;</code></li>
+</ul>
 
 <p>Labels denote a 0 for positive and 1 for negative, which is weird.</p>
 
-<h2 id="list-of-things-not-implemented">List of things not implemented:</h2>
-
-<p>nn.torch.functional<br />
-* Sigmoid (nn.torch.Sigmoid)<br />
-* LogSoftmax (nn.torch.LogSoftmax)<br />
-* BCELoss</p>
+<!-- ## List of things not implemented:
+nn.torch.functional
+* Sigmoid (nn.torch.Sigmoid)
+* LogSoftmax (nn.torch.LogSoftmax)
+* BCELoss -->
 
 
 		
@@ -230,7 +258,7 @@ This is the set of words we&rsquo;re allowed to work with</p>
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-03-28 14:20:29.859795 -0400 EDT m=&#43;0.286875944">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-03-28 14:23:49.162826 -0400 EDT m=&#43;0.297128345">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 

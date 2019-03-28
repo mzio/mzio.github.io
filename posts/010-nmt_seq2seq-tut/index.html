@@ -126,14 +126,15 @@
 
 <p>The main issue with these is not being able to capture all possible sentence inputs? We can create a simple maximum likelihood estimator by calculating the probabilities for each word $e<em>t | e</em>{t-1}$, but this is only as strong as if we see these in previous training data examples. N-grams allow us to try to be a bit more flexible.</p>
 
-<p>MORE TO COME HERE</p>
+<!-- MORE TO COME HERE -->
 
 <h2 id="log-linear-language-models">Log-linear Language Models</h2>
 
-<p>We still want to calculate the probability of a word $e<em>t$ given context $e</em>{t-n+1}^{t-1}. However, we move towards more obviously-looking machine learning models by introducing <strong>features</strong>. We have some feature function $\phi(e_{t-n+1}^{t-1})$ that takes in context and outputs a real-valued <strong>feature vector</strong> $\bm{x} \in \mathbb{R}^N$, that describes the context with $N$ different features.</p>
+<p>We still want to calculate the probability of a word $e<em>t$ given context $e</em>{t-n+1}^{t-1}. However, we move towards more obviously-looking machine learning models by introducing <strong>features</strong>. We have some feature function $\phi(e_{t-n+1}^{t-1})$ that takes in context and outputs a real-valued <strong>feature vector</strong> $\bm{x} \in \mathbb{R}^N$, that describes the context with $N\$ different features.</p>
 
-<p>In addition to this, we want to use the features to predict probabilities over the output vocabulary $V$, for which we can calculate a score vector $\bm{s} \in \mathbb{R}^{|V|}$ that corresponds to the likelihood of each word. Looking at our model parameters $\theta$ a bit more explicitly now, we can sort them into those belonging to a <strong>bias vector</strong> $\bm{b} \in \mathbb{R}^|V|$ and a <strong>weight matrix</strong> $W = \mathbb{R}^{|V| \times N}$. The bias vector tells us how likely a word is overall, and the weight matrix describes the relationship between feature values and scores. We accordingly end up with
-$$
+<p>In addition to this, we want to use the features to predict probabilities over the output vocabulary $V$, for which we can calculate a score vector $\bm{s} \in \mathbb{R}^{|V|}$ that corresponds to the likelihood of each word. Looking at our model parameters $\theta$ a bit more explicitly now, we can sort them into those belonging to a <strong>bias vector</strong> $\bm{b} \in \mathbb{R}^|V|$ and a <strong>weight matrix</strong> $W = \mathbb{R}^{|V| \times N}$. The bias vector tells us how likely a word is overall, and the weight matrix describes the relationship between feature values and scores. We accordingly end up with</p>
+
+<p>$$
 \bm{s} = W\bm{x} + \bm{b}
 $$</p>
 
@@ -155,7 +156,7 @@ $$</p>
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-03-28 14:20:29.770971 -0400 EDT m=&#43;0.198051949">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-03-28 14:23:49.061805 -0400 EDT m=&#43;0.196107598">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 
