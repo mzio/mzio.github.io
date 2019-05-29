@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>College on Michael Zhang</title>
+    <link>https://michaelzhang.xyz/tags/college/</link>
+    <description>Recent content in College on Michael Zhang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 May 2019 15:33:39 -0400</lastBuildDate>
+    
+	<atom:link href="https://michaelzhang.xyz/tags/college/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>On University Identity Jargon</title>
+      <link>https://michaelzhang.xyz/posts/015-college_id_jargon/</link>
+      <pubDate>Wed, 29 May 2019 15:33:39 -0400</pubDate>
+      
+      <guid>https://michaelzhang.xyz/posts/015-college_id_jargon/</guid>
+      <description>&amp;ldquo;Hi I&amp;rsquo;m Michael, a third year student&amp;hellip; &amp;hellip;at the college.&amp;rdquo;
+I don&amp;rsquo;t always introduce myself like that, but when I do, it&amp;rsquo;s usually in the context of meeting someone new in school, but not necessarily in college. One of the great things about where I go to school is the relative ease in taking grad-level classes1 as an undergrad (doing well in them is another matter). Additionally, certain opportunities and professors seem to be especially keen with working with undergrads.</description>
+    </item>
+    
+  </channel>
+</rss>
