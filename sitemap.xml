@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://michaelzhang.xyz/posts/015-college_id_jargon/</loc>
+    <lastmod>2019-05-29T15:33:39-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://michaelzhang.xyz/posts/010-nmt_seq2seq-tut/</loc>
     <lastmod>2019-02-27T14:44:09-05:00</lastmod>
   </url>
@@ -104,6 +109,12 @@
   </url>
   
   <url>
+    <loc>https://michaelzhang.xyz/tags/college/</loc>
+    <lastmod>2019-05-29T15:33:39-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://michaelzhang.xyz/tags/data-science/</loc>
     <lastmod>2019-01-23T23:57:50-05:00</lastmod>
     <priority>0</priority>
@@ -122,8 +133,14 @@
   </url>
   
   <url>
+    <loc>https://michaelzhang.xyz/tags/petty-posts/</loc>
+    <lastmod>2019-05-29T15:33:39-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://michaelzhang.xyz/posts/</loc>
-    <lastmod>2019-02-27T14:44:09-05:00</lastmod>
+    <lastmod>2019-05-29T15:33:39-04:00</lastmod>
     <priority>0</priority>
   </url>
   
