@@ -28,7 +28,7 @@ function init() {
 function lifeContributions() {
   // defaults
   var width = 600;
-  var height = 60; // 110
+  var height = 120; // 110
   var legendWidth = 150; //
   var selector = ".js-contributions";
   var SQUARE_LENGTH = 10;
