@@ -1,0 +1,29 @@
+.caption {
+  position: relative;
+  font-family: "Roboto Mono", Menlo, Palatino, "Palatino LT STD",
+    "Palatino Linotype", "Book Antiqua", "Georgia", serif;
+  text-align: center;
+  font-size: 12px;
+}
+
+.tooltip {
+  position: relative;
+  z-index: 9999;
+  font-size: 12px;
+  border-radius: 3px;
+  font-family: "Roboto Mono", Menlo, Palatino, "Palatino LT STD",
+    "Palatino Linotype", "Book Antiqua", "Georgia", serif;
+  text-align: center;
+}
+
+.tooltipMore {
+  padding-top: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.25s linear;
+}
+
+rect.day-cell:hover {
+  stroke: #000;
+  stroke-width: 1.5px;
+}

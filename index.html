@@ -54,6 +54,8 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="/css/life_contributions.css">
 
     
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -120,7 +122,6 @@ CRISPR - <a href="http://arep.med.harvard.edu/">Church Lab</a>, HMS</p>
 
 
     
-
 <div class="icons">
   <a href="https://github.com/mzio" target="_blank" class='icon'>
     <i class="fab fa-github icon"></i>
@@ -133,13 +134,28 @@ CRISPR - <a href="http://arep.med.harvard.edu/">Church Lab</a>, HMS</p>
   </a>
 </div>
 
+<script src="/js/life_contributions.js"></script>
+<script src="/js/life_contributions_commits.js"></script>
+<script type="text/javascript">
+  var now = moment().endOf('day').toDate();
+  var yearAgo = moment().startOf('day').subtract(1, 'year').toDate();
+  var heatmap = calendarHeatmap()
+    .data(commits)
+    .selector('.container')
+    .tooltipEnabled(true)
+    .onClick(function (data) {
+      console.log('data', data);
+    });
+  heatmap();  
+</script>
+
   </div>
 </main>
 
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-08-27 23:37:17.871405 -0700 PDT m=&#43;0.112495937">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-09-01 18:18:11.135197 -0400 EDT m=&#43;0.438982428">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 
