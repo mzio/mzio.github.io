@@ -251,13 +251,14 @@ $$n_{\text{out}} = (n_{\text{in}} - n_{\text{filter size}} + 2n_{\text{padding_s
     <i class="fas fa-envelope icon"></i>
   </a>
 </div>
+<div class="container"></div>
 
 <script src="/js/life_contributions.js"></script>
 <script src="/js/life_contributions_commits.js"></script>
 <script type="text/javascript">
   var now = moment().endOf('day').toDate();
   var yearAgo = moment().startOf('day').subtract(1, 'year').toDate();
-  var heatmap = calendarHeatmap()
+  var heatmap = lifeContributions()
     .data(commits)
     .selector('.container')
     .tooltipEnabled(true)
@@ -267,13 +268,15 @@ $$n_{\text{out}} = (n_{\text{in}} - n_{\text{filter size}} + 2n_{\text{padding_s
   heatmap();  
 </script>
 
+
+
 	</div>
 </main>
 
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-09-01 18:18:54.127418 -0400 EDT m=&#43;0.117160603">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-09-01 18:22:25.956046 -0400 EDT m=&#43;0.128514533">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 		</footer>
 
