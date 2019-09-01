@@ -52,6 +52,7 @@ function lifeContributions() {
   var legendEnabled = true;
   var onClick = null;
   var weekStart = 0; //0 for Sunday, 1 for Monday
+  var displayMonthRange = false;
   var locale = {
     months: [
       "Jan",
@@ -213,12 +214,14 @@ function lifeContributions() {
     drawChart();
 
     function drawChart() {
-      var caption = d3
-        .select(chart.selector())
-        .append("div")
-        .attr("class", "caption")
-        .attr("width", width)
-        .html(getDateRange());
+      if (displayMonthRange) {
+        var caption = d3
+          .select(chart.selector())
+          .append("div")
+          .attr("class", "caption")
+          .attr("width", width)
+          .html(getDateRange());
+      }
 
       var svg = d3
         .select(chart.selector())

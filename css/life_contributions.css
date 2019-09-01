@@ -4,6 +4,7 @@
     "Palatino Linotype", "Book Antiqua", "Georgia", serif;
   text-align: center;
   font-size: 12px;
+  padding-bottom: 5px;
 }
 
 .tooltip {
