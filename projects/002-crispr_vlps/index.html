@@ -169,22 +169,6 @@
     <i class="fas fa-envelope icon"></i>
   </a>
 </div>
-<div class="container"></div>
-
-<script src="/js/life_contributions.js"></script>
-<script src="/js/life_contributions_commits.js"></script>
-<script type="text/javascript">
-  var now = moment().endOf('day').toDate();
-  var yearAgo = moment().startOf('day').subtract(1, 'year').toDate();
-  var heatmap = lifeContributions()
-    .data(commits)
-    .selector('.container')
-    .tooltipEnabled(true)
-    .onClick(function (data) {
-      console.log('data', data);
-    });
-  heatmap();  
-</script>
 
 
 
@@ -194,9 +178,9 @@
 
         		<footer>
 			<div>
-			&copy; <time datetime="2019-09-01 18:30:56.046692 -0400 EDT m=&#43;0.118175374">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-09-01 18:34:29.992063 -0400 EDT m=&#43;0.229914576">2019</time>. Michael Zhang. H' 2020. 
 			</div>
-			<div class="container style='padding-top': 1rem"></div>
+			<div class="container" style="padding-top: 1rem"></div>
 			
 			<script src="/js/life_contributions.js"></script>
 			<script src="/js/life_contributions_commits.js"></script>
