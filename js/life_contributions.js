@@ -28,7 +28,7 @@ function init() {
 function lifeContributions() {
   // defaults
   var width = 600;
-  var height = 120; // 110
+  var height = 60; // 110
   var legendWidth = 150; //
   var selector = ".js-contributions";
   var SQUARE_LENGTH = 10;
@@ -215,8 +215,7 @@ function lifeContributions() {
 
     function drawChart() {
       if (displayMonthRange) {
-        var caption = d3
-          .select(chart.selector())
+        d3.select(chart.selector())
           .append("div")
           .attr("class", "caption")
           .attr("width", width)
