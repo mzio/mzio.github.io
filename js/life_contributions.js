@@ -227,8 +227,11 @@ function lifeContributions() {
         .style("position", "relative")
         .style("text-align", "center")
         .append("svg")
+        .attr("class", "svg-graph")
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", "0 0 " + width + " " + height)
+        .classed("svg-responsive", true)
         .attr("width", width)
-        .attr("class", "calendar-heatmap")
         .attr("height", height);
 
       dayRects = svg.selectAll(".day-cell").data(dateRange); //  array of days for the last yr
