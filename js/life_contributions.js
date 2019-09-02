@@ -285,7 +285,7 @@ function lifeContributions() {
               .select(chart.selector())
               .append("div")
               .html(allCountsForDate(d))
-              .attr("class", "tooltip tooltipMore");
+              .attr("class", "tooltipMore");
           })
           .on("mouseout", function(d, i) {
             tooltip.remove();
