@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140792770-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-140792770-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+            Making a GitHub Contributions Graph for Life &middot; Michael Zhang
+    </title>
+
+    
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="/css/life_contributions.css">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Michael Zhang" />
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+</head>
+    
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Michael Zhang</h2>
+				</a>
+				<ul>
+    <li><a href="/about">About</a></li>
+    <li><a href="/posts">Posts</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/">Home</a></li>
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Updated</span><span> on&nbsp;</span><time datetime="2019-08-29 16:25:37 -0400 EDT">August 29, 2019</time>
+        
+
+    
+</div>
+		<h1 class="post-title">Making a GitHub Contributions Graph for Life</h1>
+<div class="post-line" style="padding-bottom: 16px"></div>
+
+
+		
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+		<div style="margin-bottom: 2em">
+			<i>In which I spend too much time thinking about how to work with web colors</i>
+			
+		</div>
+		
+	    
+
+		
+
+<figure>
+  <img src="/images/016-life_contributions.png"  />
+</figure>
+
+<p>Something I&rsquo;ve recently realized is that my work habits tend to obey inertia frustratingly well. What I mean is that if I&rsquo;m currently getting a lot done, or coming off a track record of getting things done, I tend to stay focused and continue to get work done. Which is nice. But this also means that if I&rsquo;m being a YouTube-watching potato, I tend to stay a potato.</p>
+
+<p>While I&rsquo;ve never been super big into the whole life-hacking thing, I have noticed there are certain cues that help me reinforce the former mode. The motivating example of interest I want to focus on today is none other than the GitHub contributions graph.</p>
+
+<figure>
+  <img src="/images/016-github_graph.png"  />
+  <figcaption style="text-align: center">
+      <i>My GitHub contributions graph as of today. I promise I did things before January. </i>
+  </figcaption>
+</figure>
+
+<p>At the end of the day I&rsquo;m pretty sure this is pretty simple psychology. But keeping streaks alive is a powerful motivator, and on more than one occasion a gray square has definitely motivated me to push something, setting off a happy period of progress.</p>
+
+<p>Something I&rsquo;ve also tried to do in terms of habits is document everything I do, which helps me respect the progress I&rsquo;m making and the passage of time. It&rsquo;s also a nice way to create personal references for later. The problem is that I usually save these in some random markdown files or Google Keep, and while I&rsquo;ve started and stopped some form of this since freshman year of college, there&rsquo;s always the eventual die-down.</p>
+
+<p>Noticing this, I wanted to build a thing sort of like a GitHub contributions graph for life. Having this could provide a nice personal visual motivator. Making it reliant on writing out the things I&rsquo;ve done helps me preserve the documentation habit above. Putting it on my website provides another incentive in terms of public accountability (although I&rsquo;m pretty sure no one really sees this). Finally calling it a life contributions graph makes it unnessecarily dramatic.</p>
+
+<p>In fact I&rsquo;ve wanted to build this since early June, and I think if you go through the commit history you can verify this. But one weekend I got distracted with something else, and then something something not working on this now $\Rightarrow$ not working on this later. It wasn&rsquo;t until Hack Lodge and literally coming home to a house full of people working on projects for a week that I found the incentive to start things again.</p>
+
+<p>In the spirit of a hack, I tried to keep things pretty minimal. The main technical thing related to providing the data was writing a script to parse all my markdown files into readable &ldquo;commits&rdquo;, and then figuring out a data schema to save all of it.</p>
+
+<p>More of the thinking went into the frontend, and how to get the color scheme I wanted. If we think back to the original GitHub contributions graph, we have this situation where we start out with this light green (gray if you count zero contributions), and more contributions correlates with progressively darker shades of green. The main visual thing I wanted to accomplish however was to factor in different categories of commits, and keep this in a minimal 2D interface. For example, in any given day I might work on research, classwork, and a side-project, and I wanted to be able to create an immediate visual cue for this.</p>
+
+<p>For different classes or categories of commits, intuitively we could just assign different base colors to each class, and then overlay them. If you&rsquo;ve ever played around with multiple plots in the same figure using matplotlib, you can sort of imagine what this would look like.</p>
+
+<figure>
+  <img src="/images/016-colors-1.png"  />
+</figure>
+
+<p>The problem is that with multiple categories, things can sort of start to look muddled. Instead of an additive color schema that might encourage trying to get work done across various categories, we end up with this muddled regression to the brown.</p>
+
+<figure>
+  <img src="/images/016-colors-2.png"  />
+</figure>
+
+<p>Please don&rsquo;t call the HCI or design police on me, but for my own purposes I wanted a purer light square to denote maximum contributions across all categories. Think about it like achieving this pristine state. At the same time, for an individual color and category, it seemed like contributing more to that category should warrant a more intense color. Accordingly, we sort of have this interpolation problem where colors should get darker and more intense along one dimension (more contributions with respect to a single category), but inversely also get brighter along another (more contribution representation across all categories). A good analogy is light, which is additive, and where more photons leads to a more intense color, and the intersection of the most intense red, green, and blue yields white.</p>
+
+<h3 id="color-on-the-internet">Color on the Internet</h3>
+
+<p>Now web colors work inherently in an additive manner. The most direct way to do this is to specify the intensity then for each of these channels, which is basically what RGBA does (i.e. <code>rgba(a, b, c, d))</code> where $a, b, c \in {0, 1, 2, \ldots 255}$ and $d \in [0, 1]$.</p>
+
+<p>This is fine and good for red, green, and blue, but what if we have more than three categories? In terms of mixing multiple colors and getting the desired effect, another representation that&rsquo;s a lot more interpretable (at least to me) is HSL, which deals with hue, saturation, and lightness values. Turns out this is actually parameterized almost perfectly for our purposes (PPP?).</p>
+
+<p><a title="HSL_color_solid_cylinder.png: SharkD
+derivative work: SharkD  Talk [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:HSL_color_solid_cylinder_saturation_gray.png"><img width="512" alt="HSL color solid cylinder saturation gray" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/HSL_color_solid_cylinder_saturation_gray.png/512px-HSL_color_solid_cylinder_saturation_gray.png"></a></p>
+
+<p><code>Hue</code> denotes the base color, and spans 360 degrees across all the colors. We can easily set category colors then along uniform intervals. <code>Saturation</code> is a percentage from 0 to 100 denoting how intense this color is. It&rsquo;s related to <code>lightness</code>, but we can think of saturation close to $0$ being something in 50 shades of gray world (i.e. somewhere on the white to black spectrum). So as we contribute more to a category, we can just turn the saturation up.</p>
+
+<p>Finally the <code>lightness</code> value is also a percentage from 0 to 100. To capture the Github effect, we start out with lightness = $75%$, and if there are less than half of all categories represented, we actually interpolate down to $50%$. On the other hand, if more than $50%$ of all categories have contributions, we go up to $100%$. To do this in practice, we actually just map the fraction of total saturation score (sum of saturation over all represented categories divided by (max saturation (100) times number of categories)) to the interval from $50% to 100%$.</p>
+
+<p>In terms of the actual implementation, most of the JavaScript is a fork off of this <a href="https://github.com/DKirwan/calendar-heatmap">D3-based calendar heatmap</a>. To change things up a bit I decided to layout the grid with rows representing months, and to display only the last 2 months. As of now, to demo it just scroll to the bottom of this page. To be perfectly honest, I think I&rsquo;m just ok with it right now. Ideally I&rsquo;d have time to do more and make it standalone (actual project page and code to come soon), but for now I probably should build up momentum on another projects.</p>
+
+
+		
+<div class="icons">
+  <a href="https://github.com/mzio" target="_blank" class='icon'>
+    <i class="fab fa-github icon"></i>
+  </a>
+  <a href="https://linkedin.com/in/michaelzhangxyz/" target="_blank" class='icon'>
+    <i class="fab fa-linkedin-in icon"></i>
+  </a>
+  <a href="mailto:michael_zhang@college.harvard.edu" class='icon'>
+    <i class="fas fa-envelope icon"></i>
+  </a>
+</div>
+
+
+
+	</div>
+</main>
+
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2019-09-01 20:58:38.99585 -0400 EDT m=&#43;0.268329664">2019</time>. Michael Zhang. H' 2020. 
+			</span>
+			<div class="container" style="padding-top: 5px; height: 200px"></div>
+			
+			<script src="/js/life_contributions.js"></script>
+			<script src="/js/life_contributions_commits.js"></script>
+			<script type="text/javascript">
+				var now = moment().endOf('day').toDate();
+				var yearAgo = moment().startOf('day').subtract(1, 'year').toDate();
+				var graph = lifeContributions()
+				.data(commits)
+				.selector('.container')
+				.tooltipEnabled(true)
+				.onClick(function (data) {
+					console.log('data', data);
+				});
+				graph();  
+			</script>
+		</footer>
+
+    </body>
+</html>
