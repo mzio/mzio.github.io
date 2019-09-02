@@ -29,7 +29,7 @@
   font-family: "Roboto Mono", Menlo, Palatino, "Palatino LT STD",
     "Palatino Linotype", "Book Antiqua", "Georgia", serif;
   text-align: center;
-  padding-top: 4rem;
+  margin-top: 4rem;
 }
 
 .tooltipMore {
@@ -37,7 +37,6 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.25s linear;
-  padding-top: 4rem;
 }
 
 rect.day-cell:hover {
