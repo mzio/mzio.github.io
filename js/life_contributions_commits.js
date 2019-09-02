@@ -235,8 +235,8 @@ var commits = {
       logistics: 0,
       research: 0,
       school: 0,
-      side_projects: 1
+      side_projects: 4
     },
-    hsl: "hsl(144, 55%, 72%)"
+    hsl: "hsl(144, 70%, 65%)"
   }
 };

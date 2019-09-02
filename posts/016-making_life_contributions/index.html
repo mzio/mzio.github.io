@@ -191,13 +191,13 @@
   <a title="HSL_color_solid_cylinder.png: SharkD
 derivative work: SharkD  Talk [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:HSL_color_solid_cylinder_saturation_gray.png"><img width="512" alt="HSL color solid cylinder saturation gray" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/HSL_color_solid_cylinder_saturation_gray.png/512px-HSL_color_solid_cylinder_saturation_gray.png"></a>
   <figcaption style="text-align: center">
-    <i>HSL diagram. Credit to [Wikimedia](https://commons.wikimedia.org/wiki/File:HSL_color_solid_cylinder_saturation_gray.png)</i>
+    <i>HSL diagram. Credit to Wikimedia (image is a link).</i>
 </figcaption>
 </figure>
 
-<p><code>Hue</code> denotes the base color, and spans 360 degrees across all the colors. We can easily set category colors then along uniform intervals. <code>Saturation</code> is a percentage from 0 to 100 denoting how intense this color is. It&rsquo;s related to <code>lightness</code>, but we can think of saturation close to 0 being something in 50 shades of gray world (i.e. somewhere on the white to black spectrum). So as we contribute more to a category, we can just turn the saturation up.</p>
+<p>Hue denotes the base color, and spans 360 degrees across all the colors. We can easily set category colors then along uniform intervals. Saturation is a percentage from 0 to 100 denoting how intense this color is. It&rsquo;s related to lightness, but we can think of saturation close to 0 being something in 50 shades of gray world (i.e. somewhere on the white to black spectrum). So as we contribute more to a category, we can just turn the saturation up.</p>
 
-<p>Finally the <code>lightness</code> value is also a percentage from 0 to 100. To capture the Github effect, we start out with lightness = 75%, and if there are less than half of all categories represented, we actually interpolate down to 50%. On the other hand, if more than 50% of all categories have contributions, we go up to 100%. To do this in practice, we actually just map the fraction of total saturation score, or <code>(sum of saturation over all represented categories) / (max saturation times x number of categories)</code>, to the interval from [50% to 100%].</p>
+<p>Finally the lightness value is also a percentage from 0 to 100. To capture the Github effect, we start out with lightness = 75%, and if there are less than half of all categories represented, we actually interpolate down to 50%. On the other hand, if more than 50% of all categories have contributions, we go up to 100%. To do this in practice, we actually just map the fraction of total saturation score, or <code>(sum of saturation over all represented categories) / (max saturation times x number of categories)</code>, to the interval from 50% to 100%.</p>
 
 <p>In terms of the actual implementation, most of the JavaScript is a fork off of this <a href="https://github.com/DKirwan/calendar-heatmap">D3-based calendar heatmap</a>. To change things up a bit I decided to layout the grid with rows representing months, and to display only the last 2 months. As of now, to demo it just scroll to the bottom of this page. Ideally I&rsquo;d have time to do more and make it standalone (actual project page and code to come soon), but for now I probably should build up momentum on other projects.</p>
 
@@ -223,7 +223,7 @@ derivative work: SharkD  Talk [CC BY-SA 3.0 (https://creativecommons.org/licens
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-09-01 21:11:16.368484 -0400 EDT m=&#43;0.123311641">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-09-01 21:17:05.426248 -0400 EDT m=&#43;0.146137214">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 			<div class="container" style="padding-top: 5px; height: 200px"></div>
 			
