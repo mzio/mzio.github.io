@@ -179,22 +179,27 @@
   <img src="/images/016-colors-2.png"  />
 </figure>
 
-<p>Please don&rsquo;t call the HCI or design police on me, but for my own purposes I wanted a purer light square to denote maximum contributions across all categories. Think about it like achieving this pristine state. At the same time, for an individual color and category, it seemed like contributing more to that category should warrant a more intense color. Accordingly, we sort of have this interpolation problem where colors should get darker and more intense along one dimension (more contributions with respect to a single category), but inversely also get brighter along another (more contribution representation across all categories). A good analogy is light, which is additive, and where more photons leads to a more intense color, and the intersection of the most intense red, green, and blue yields white.</p>
+<p>Please don&rsquo;t call the HCI or design police on me, but for my own purposes I wanted a brighter light square to denote maximum contributions across all categories. Think about it like achieving this pristine state. At the same time, for an individual color and category, it seemed like contributing more to that category should warrant a more intense color. Accordingly, we sort of have this interpolation problem where colors should get darker and more intense along one dimension (more contributions with respect to a single category), but inversely also get brighter along another (more contribution representation across all categories). A good analogy is light, which is additive, and where more photons leads to a more intense color, and the intersection of the most intense red, green, and blue yields white.</p>
 
 <h3 id="color-on-the-internet">Color on the Internet</h3>
 
-<p>Now web colors work inherently in an additive manner. The most direct way to do this is to specify the intensity then for each of these channels, which is basically what RGBA does (i.e. <code>rgba(a, b, c, d))</code> where $a, b, c \in {0, 1, 2, \ldots 255}$ and $d \in [0, 1]$.</p>
+<p>Now web colors work inherently in an additive manner. The most direct way to do this is to specify the intensity then for each of these channels, which is basically what RGBA does (i.e. <code>rgba(a, b, c, d)</code>) where <code>a, b, c</code> $\in$ <code>{0, 1, 2, ... 255}</code> and <code>d</code> $\in$ <code>[0, 1]</code>.</p>
 
 <p>This is fine and good for red, green, and blue, but what if we have more than three categories? In terms of mixing multiple colors and getting the desired effect, another representation that&rsquo;s a lot more interpretable (at least to me) is HSL, which deals with hue, saturation, and lightness values. Turns out this is actually parameterized almost perfectly for our purposes (PPP?).</p>
 
-<p><a title="HSL_color_solid_cylinder.png: SharkD
-derivative work: SharkD  Talk [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:HSL_color_solid_cylinder_saturation_gray.png"><img width="512" alt="HSL color solid cylinder saturation gray" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/HSL_color_solid_cylinder_saturation_gray.png/512px-HSL_color_solid_cylinder_saturation_gray.png"></a></p>
+<figure>
+  <a title="HSL_color_solid_cylinder.png: SharkD
+derivative work: SharkD  Talk [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:HSL_color_solid_cylinder_saturation_gray.png"><img width="512" alt="HSL color solid cylinder saturation gray" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/HSL_color_solid_cylinder_saturation_gray.png/512px-HSL_color_solid_cylinder_saturation_gray.png"></a>
+  <figcaption style="text-align: center">
+    <i>HSL diagram. Credit to [Wikimedia](https://commons.wikimedia.org/wiki/File:HSL_color_solid_cylinder_saturation_gray.png)</i>
+</figcaption>
+</figure>
 
-<p><code>Hue</code> denotes the base color, and spans 360 degrees across all the colors. We can easily set category colors then along uniform intervals. <code>Saturation</code> is a percentage from 0 to 100 denoting how intense this color is. It&rsquo;s related to <code>lightness</code>, but we can think of saturation close to $0$ being something in 50 shades of gray world (i.e. somewhere on the white to black spectrum). So as we contribute more to a category, we can just turn the saturation up.</p>
+<p><code>Hue</code> denotes the base color, and spans 360 degrees across all the colors. We can easily set category colors then along uniform intervals. <code>Saturation</code> is a percentage from 0 to 100 denoting how intense this color is. It&rsquo;s related to <code>lightness</code>, but we can think of saturation close to 0 being something in 50 shades of gray world (i.e. somewhere on the white to black spectrum). So as we contribute more to a category, we can just turn the saturation up.</p>
 
-<p>Finally the <code>lightness</code> value is also a percentage from 0 to 100. To capture the Github effect, we start out with lightness = $75%$, and if there are less than half of all categories represented, we actually interpolate down to $50%$. On the other hand, if more than $50%$ of all categories have contributions, we go up to $100%$. To do this in practice, we actually just map the fraction of total saturation score (sum of saturation over all represented categories divided by (max saturation (100) times number of categories)) to the interval from $50% to 100%$.</p>
+<p>Finally the <code>lightness</code> value is also a percentage from 0 to 100. To capture the Github effect, we start out with lightness = 75%, and if there are less than half of all categories represented, we actually interpolate down to 50%. On the other hand, if more than 50% of all categories have contributions, we go up to 100%. To do this in practice, we actually just map the fraction of total saturation score, or <code>(sum of saturation over all represented categories) / (max saturation times x number of categories)</code>, to the interval from [50% to 100%].</p>
 
-<p>In terms of the actual implementation, most of the JavaScript is a fork off of this <a href="https://github.com/DKirwan/calendar-heatmap">D3-based calendar heatmap</a>. To change things up a bit I decided to layout the grid with rows representing months, and to display only the last 2 months. As of now, to demo it just scroll to the bottom of this page. To be perfectly honest, I think I&rsquo;m just ok with it right now. Ideally I&rsquo;d have time to do more and make it standalone (actual project page and code to come soon), but for now I probably should build up momentum on another projects.</p>
+<p>In terms of the actual implementation, most of the JavaScript is a fork off of this <a href="https://github.com/DKirwan/calendar-heatmap">D3-based calendar heatmap</a>. To change things up a bit I decided to layout the grid with rows representing months, and to display only the last 2 months. As of now, to demo it just scroll to the bottom of this page. Ideally I&rsquo;d have time to do more and make it standalone (actual project page and code to come soon), but for now I probably should build up momentum on other projects.</p>
 
 
 		
@@ -218,7 +223,7 @@ derivative work: SharkD  Talk [CC BY-SA 3.0 (https://creativecommons.org/licens
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-09-01 20:59:15.789737 -0400 EDT m=&#43;0.115454404">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-09-01 21:11:01.958486 -0400 EDT m=&#43;0.134563690">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 			<div class="container" style="padding-top: 5px; height: 200px"></div>
 			
