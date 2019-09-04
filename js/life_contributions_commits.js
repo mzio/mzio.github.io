@@ -238,5 +238,25 @@ var commits = {
       side_projects: 4
     },
     hsl: "hsl(144, 70%, 65%)"
+  },
+  "9/2/19": {
+    counts: {
+      life: 0,
+      logistics: 0,
+      research: 1,
+      school: 1,
+      side_projects: 0
+    },
+    hsl: "hsl(150, 60%, 70%)"
+  },
+  "9/3/19": {
+    counts: {
+      life: 0,
+      logistics: 0,
+      research: 1,
+      school: 1,
+      side_projects: 0
+    },
+    hsl: "hsl(150, 60%, 70%)"
   }
 };
