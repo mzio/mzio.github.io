@@ -298,5 +298,55 @@ var commits = {
       side_projects: 0
     },
     hsl: "hsl(99, 85%, 57%)"
+  },
+  "9/11/19": {
+    counts: {
+      life: 0,
+      logistics: 1,
+      research: 0,
+      school: 1,
+      side_projects: 0
+    },
+    hsl: "hsl(27, 60%, 70%)"
+  },
+  "9/12/19": {
+    counts: {
+      life: 0,
+      logistics: 0,
+      research: 0,
+      school: 2,
+      side_projects: 0
+    },
+    hsl: "hsl(55, 60%, 70%)"
+  },
+  "9/13/19": {
+    counts: {
+      life: 0,
+      logistics: 0,
+      research: 0,
+      school: 1,
+      side_projects: 0
+    },
+    hsl: "hsl(55, 55%, 72%)"
+  },
+  "9/14/19": {
+    counts: {
+      life: 1,
+      logistics: 0,
+      research: 1,
+      school: 0,
+      side_projects: 0
+    },
+    hsl: "hsl(266, 60%, 70%)"
+  },
+  "9/15/19": {
+    counts: {
+      life: 0,
+      logistics: 1,
+      research: 2,
+      school: 2,
+      side_projects: 0
+    },
+    hsl: "hsl(120, 75%, 62%)"
   }
 };
