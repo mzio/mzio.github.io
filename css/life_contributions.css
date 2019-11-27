@@ -29,7 +29,8 @@
   font-family: "Roboto Mono", Menlo, Palatino, "Palatino LT STD",
     "Palatino Linotype", "Book Antiqua", "Georgia", serif;
   text-align: center;
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
+  margin-top: 7rem; /* to go with bottom = 110 instead of 60 */
 }
 
 .tooltipMore {
