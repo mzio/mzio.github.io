@@ -1,116 +1,133 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-	<meta name="generator" content="Hugo 0.52" />
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140792770-1"></script>
-    <script>
+
+<head>
+  <meta name="generator" content="Hugo 0.52" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140792770-1"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'UA-140792770-1');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+
+  <title>
+    Michael Zhang
+  </title>
+
+
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          TeX: {
+            equationNumbers: { autoNumber: "AMS" },
+            extensions: ["AMSmath.js", "AMSsymbols.js"]
+          }
+        }
+      });
+      MathJax.Hub.Queue(function () {
+
+
+
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+
+      MathJax.Hub.Config({
+
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
     </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
 
-    <title>
-            Michael Zhang
-    </title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
-    
-    <script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-  });
-  MathJax.Hub.Queue(function() {
-    
-    
-    
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
+  <link rel="stylesheet" type="text/css" href="/css/life_contributions.css">
 
-  MathJax.Hub.Config({
-  
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-</script>
 
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-    
-    <link rel="stylesheet" type="text/css" href="/css/life_contributions.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-mz.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-mz.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-    
-    <link href="https://michaelzhang.xyz/index.xml" rel="alternate" type="application/rss+xml" title="Michael Zhang" />
 
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js" charset="utf-8"></script>
-    <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+  <link href="https://michaelzhang.xyz/index.xml" rel="alternate" type="application/rss+xml" title="Michael Zhang" />
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js" charset="utf-8"></script>
+  <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
 </head>
-    
-    <body>
-        		<nav class="nav">
-			<div class="nav-container">
-				<a href="/">
-					<h2 class="nav-title">Michael Zhang</h2>
-				</a>
-				<ul>
-    <li><a href="/about">About</a></li>
-    <li><a href="/posts">Posts</a></li>
-    <li><a href="/projects">Projects</a></li>
-    <li><a href="/">Home</a></li>
-</ul>
-			</div>
-		</nav>
 
-        
-
-<main>
-  <div class="post">
-    <h1 class="post-title">heyo</h1>
-<div class="post-line" style="padding-bottom: 16px"></div>
-<img
-  src="/images/headshot_circle1.png"
-  id='headshot'
-/>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/">
+        <h2 class="nav-title">Michael Zhang</h2>
+      </a>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/posts">Posts</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/">Home</a></li>
+      </ul>
+    </div>
+  </nav>
 
 
 
-    <p>Welcome to my rendition of yet another vaguely academic personal site (that also sort of looks like the <a href="http://demo.getpoole.com/">rest</a> <a href="https://alshedivat.github.io/al-folio/">of</a> <a href="https://academicpages.github.io/">them</a>)!</p>
+  <main>
+    <div class="post">
+      <h1 class="post-title">heyo</h1>
+      <div class="post-line" style="padding-bottom: 16px"></div>
+      <img src="/images/headshot_circle1.png" id='headshot' />
 
-<p>In all seriousness, I&rsquo;m Michael, a senior at Harvard who likes thinking about statistics along with some types of economics (market design, game theory) and computer science (mostly ML).</p>
 
-<p><a href="https://www.merriam-webster.com/dictionary/meme">For all inten</a><a href="https://en.wikipedia.org/wiki/In-joke">ts and pur</a><a href="https://www.englishgrammar.org/intents-purposes-intensive-purposes/">poses</a>, I currently work with <a href="http://ai.stanford.edu/~syyeung/">Serena Yeung</a> on computer vision and deep learning things, and <a href="http://people.seas.harvard.edu/~samurphy/">Susan Murphy</a> on reinforcement learning. I&rsquo;ve also done research in meta-learning and RL policy characterization with Serena and Susan at the <a href="http://people.seas.harvard.edu/~samurphy/lab/overview.html">Statistical RL Lab</a>, and <a href="https://www.alexdamour.com/">Alex D&rsquo;Amour</a> at <a href="https://sites.google.com/view/harvardcs282r/home">Google Brain</a>.</p>
 
-<p>Before that I spent a summer doing quant research at <a href="https://drw.com/">DRW</a>, and before that I built tools in computational healthcare in <a href="http://www.childrenshospital.org/research/researchers/m/kenneth-mandl">Ken Mandl</a>&rsquo;s group at <a href="https://www.chip.org/">Boston Childrens&rsquo; Hospital</a> and genome editing under <a href="http://arep.med.harvard.edu/gmc/">George Church</a> at Harvard Medical School and the <a href="https://wyss.harvard.edu/technologies/?taxonomy=focus_area&amp;term=125">Wyss Institute</a>.</p>
+      <p>Welcome to my rendition of yet another vaguely academic personal site (that also sort of looks like the <a
+          href="http://demo.getpoole.com/">rest</a> <a href="https://alshedivat.github.io/al-folio/">of</a> <a
+          href="https://academicpages.github.io/">them</a>)!</p>
 
-<!-- ### # Currently
+      <p>In all seriousness, I&rsquo;m Michael, a senior at Harvard who likes thinking about statistics along with some
+        types of economics (market design, game theory) and computer science (mostly ML).</p>
+
+      <p><a href="https://www.merriam-webster.com/dictionary/meme">For all inten</a><a
+          href="https://en.wikipedia.org/wiki/In-joke">ts and pur</a><a
+          href="https://www.englishgrammar.org/intents-purposes-intensive-purposes/">poses</a>, I currently work with <a
+          href="http://ai.stanford.edu/~syyeung/">Serena Yeung</a> on computer vision and deep learning things, and <a
+          href="http://people.seas.harvard.edu/~samurphy/">Susan Murphy</a> on reinforcement learning. I&rsquo;ve also
+        done research in meta-learning and RL policy characterization with Serena and Susan at the <a
+          href="http://people.seas.harvard.edu/~samurphy/lab/overview.html">Statistical RL Lab</a>, and <a
+          href="https://www.alexdamour.com/">Alex D&rsquo;Amour</a> at <a
+          href="https://sites.google.com/view/harvardcs282r/home">Google Brain</a>.</p>
+
+      <p>Before that I spent a summer doing quant research at <a href="https://drw.com/">DRW</a>, and before that I
+        built tools in computational healthcare in <a
+          href="http://www.childrenshospital.org/research/researchers/m/kenneth-mandl">Ken Mandl</a>&rsquo;s group at <a
+          href="https://www.chip.org/">Boston Childrens&rsquo; Hospital</a> and genome editing under <a
+          href="http://arep.med.harvard.edu/gmc/">George Church</a> at Harvard Medical School and the <a
+          href="https://wyss.harvard.edu/technologies/?taxonomy=focus_area&amp;term=125">Wyss Institute</a>.</p>
+
+      <!-- ### # Currently
 
 Learning - [Statistics](https://statistics.fas.harvard.edu/) + [Computer Science](https://www.seas.harvard.edu/computer-science) @Harvard
 Researching - Yeung Lab @Stanford, [Statistical RL Lab](http://people.seas.harvard.edu/~samurphy/lab/overview.html) @Harvard
@@ -123,71 +140,73 @@ Healthcare SWE - [Boston Children's Hospital](https://www.chip.org/)
 CRISPR - [Church Lab](http://arep.med.harvard.edu/), HMS -->
 
 
-    <div class="catalogue" style="padding-top: 2rem;">
-      <p>Research</p>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      <div class="catalogue" style="padding-top: 2rem;">
+        <p>Research</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+      <div class="icons">
+        <a href="https://github.com/mzio" target="_blank" class='icon'>
+          <i class="fab fa-github icon"></i>
+        </a>
+        <a href="https://linkedin.com/in/michaelzhangxyz/" target="_blank" class='icon'>
+          <i class="fab fa-linkedin-in icon"></i>
+        </a>
+        <a href="mailto:michael_zhang@college.harvard.edu" class='icon'>
+          <i class="fas fa-envelope icon"></i>
+        </a>
+      </div>
+
+
+
+
+
     </div>
-
-    
-<div class="icons">
-  <a href="https://github.com/mzio" target="_blank" class='icon'>
-    <i class="fab fa-github icon"></i>
-  </a>
-  <a href="https://linkedin.com/in/michaelzhangxyz/" target="_blank" class='icon'>
-    <i class="fab fa-linkedin-in icon"></i>
-  </a>
-  <a href="mailto:michael_zhang@college.harvard.edu" class='icon'>
-    <i class="fas fa-envelope icon"></i>
-  </a>
-</div>
+  </main>
 
 
+  <footer>
+    <span>
+      &copy; <time datetime="2019-11-28 23:14:00.696228 -0500 EST m=&#43;0.173672371">2019</time>. Michael Zhang. H'
+      2020.
+    </span>
+    <div class="container" style="padding-top: 5px; height: 200px; width: 71%;"></div>
 
+    <script src="/js/life_contributions.js"></script>
+    <script src="/js/life_contributions_commits.js"></script>
+    <script type="text/javascript">
+      var now = moment().endOf('day').toDate();
+      var yearAgo = moment().startOf('day').subtract(1, 'year').toDate();
+      var graph = lifeContributions()
+        .data(commits)
+        .selector('.container')
+        .tooltipEnabled(true)
+        .onClick(function (data) {
+          console.log('data', data);
+        });
+      graph();  
+    </script>
+  </footer>
 
-    
-  </div>
-</main>
+</body>
 
-
-        		<footer>
-			<span>
-			&copy; <time datetime="2019-11-28 23:14:00.696228 -0500 EST m=&#43;0.173672371">2019</time>. Michael Zhang. H' 2020. 
-			</span>
-			<div class="container" style="padding-top: 5px; height: 200px; width: 71%;"></div>
-			
-			<script src="/js/life_contributions.js"></script>
-			<script src="/js/life_contributions_commits.js"></script>
-			<script type="text/javascript">
-				var now = moment().endOf('day').toDate();
-				var yearAgo = moment().startOf('day').subtract(1, 'year').toDate();
-				var graph = lifeContributions()
-				.data(commits)
-				.selector('.container')
-				.tooltipEnabled(true)
-				.onClick(function (data) {
-					console.log('data', data);
-				});
-				graph();  
-			</script>
-		</footer>
-
-    </body>
 </html>
