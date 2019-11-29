@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Researches on Michael Zhang</title>
+    <link>https://michaelzhang.xyz/research/</link>
+    <description>Recent content in Researches on Michael Zhang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Nov 2019 17:40:08 -0500</lastBuildDate>
+    
+	<atom:link href="https://michaelzhang.xyz/research/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Characterizing Policy Divergence for Personalized Meta-Reinforcement Learning</title>
+      <link>https://michaelzhang.xyz/research/002-policy_divergence_personalized_meta-rl/</link>
+      <pubDate>Thu, 28 Nov 2019 17:40:08 -0500</pubDate>
+      
+      <guid>https://michaelzhang.xyz/research/002-policy_divergence_personalized_meta-rl/</guid>
+      <description>  </description>
+    </item>
+    
+  </channel>
+</rss>

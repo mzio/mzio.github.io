@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head>
+	<meta name="generator" content="Hugo 0.52" />
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140792770-1"></script>
     <script>
@@ -13,9 +14,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
 
     <title>
-            Turbine Optimization Problem &middot; Michael Zhang
+            Michael Zhang
     </title>
 
     
@@ -65,7 +67,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
     
-    <link href="" rel="alternate" type="application/rss+xml" title="Michael Zhang" />
+    <link href="https://michaelzhang.xyz/index.xml" rel="alternate" type="application/rss+xml" title="Michael Zhang" />
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js" charset="utf-8"></script>
@@ -90,62 +92,61 @@
         
 
 <main>
-	<div class="post">
-		<div class="post-info">
-    <span>Updated</span><span> on&nbsp;</span><time datetime="2016-05-15 15:29:26 -0500 -0500">May 15, 2016</time>
-        
-
-    
-</div>
-		<h1 class="post-title">Turbine Optimization Problem</h1>
+  <div class="post">
+    <h1 class="post-title">heyo</h1>
 <div class="post-line" style="padding-bottom: 16px"></div>
+<img
+  src="/images/headshot_circle1.png"
+  id='headshot'
+/>
 
 
-		
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-  });
-  MathJax.Hub.Queue(function() {
+
+    <p>Welcome to my rendition of yet another vaguely academic personal site (that also sort of looks like the <a href="http://demo.getpoole.com/">rest</a> <a href="https://alshedivat.github.io/al-folio/">of</a> <a href="https://academicpages.github.io/">them</a>)!</p>
+
+<p>In all seriousness, I&rsquo;m Michael, a senior at Harvard who likes thinking about statistics along with some types of economics (market design, game theory) and computer science (mostly ML).</p>
+
+<p><a href="https://www.merriam-webster.com/dictionary/meme">For all inten</a><a href="https://en.wikipedia.org/wiki/In-joke">ts and pur</a><a href="https://www.englishgrammar.org/intents-purposes-intensive-purposes/">poses</a>, I currently work with <a href="http://ai.stanford.edu/~syyeung/">Serena Yeung</a> on computer vision and deep learning things, and <a href="http://people.seas.harvard.edu/~samurphy/">Susan Murphy</a> on reinforcement learning. I&rsquo;ve also done research in meta-learning and RL policy characterization with Serena and Susan at the <a href="http://people.seas.harvard.edu/~samurphy/lab/overview.html">Statistical RL Lab</a>, and <a href="https://www.alexdamour.com/">Alex D&rsquo;Amour</a> at <a href="https://sites.google.com/view/harvardcs282r/home">Google Brain</a>.</p>
+
+<p>Before that I spent a summer doing quant research at <a href="https://drw.com/">DRW</a>, and before that I built tools in computational healthcare in <a href="http://www.childrenshospital.org/research/researchers/m/kenneth-mandl">Ken Mandl</a>&rsquo;s group at <a href="https://www.chip.org/">Boston Childrens&rsquo; Hospital</a> and genome editing under <a href="http://arep.med.harvard.edu/gmc/">George Church</a> at Harvard Medical School and the <a href="https://wyss.harvard.edu/technologies/?taxonomy=focus_area&amp;term=125">Wyss Institute</a>.</p>
+
+<!-- ### # Currently
+
+Learning - [Statistics](https://statistics.fas.harvard.edu/) + [Computer Science](https://www.seas.harvard.edu/computer-science) @Harvard
+Researching - Yeung Lab @Stanford, [Statistical RL Lab](http://people.seas.harvard.edu/~samurphy/lab/overview.html) @Harvard
+
+### # Previously
+
+Quant Research - [DRW](https://drw.com/)
+Genomics + ML - [Broad Institute](https://www.broadinstitute.org/)
+Healthcare SWE - [Boston Children's Hospital](https://www.chip.org/)
+CRISPR - [Church Lab](http://arep.med.harvard.edu/), HMS -->
+
+
+    <div class="catalogue" style="padding-top: 2rem;">
+      <p>Research</p>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+
     
-    
-    
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-
-  MathJax.Hub.Config({
-  
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-  });
-</script>
-
-		<div style="margin-bottom: 2em">
-			<i>A modeling project from high school done in Mr. Poiesz&#39;s 2015-2016 multivariable calculus class</i>
-			
-		</div>
-		
-	    
-
-		<p>Multivariable calculus was a fun time, and for a class project we were tasked with solving a Lagrange optimization problem. This was around the time I started learning about GitHub Pages and hosting websites for various club and activity-related things, so in my youthful enthusiasm I thought it&rsquo;d be cool to turn in a website for the assignment.</p>
-
-<p>Unfortunately for some reason I didn&rsquo;t include the original questions, so it&rsquo;s kind of limited there. That being said I&rsquo;m keeping it here because it&rsquo;s up on GitHub and at the time I thought GitHub pages was a super cool way to host anything.</p>
-
-<p>See the actual content <a href="https://michaelzhang.xyz/Turbine-Problem/">here</a>.</p>
-
-
-		
 <div class="icons">
   <a href="https://github.com/mzio" target="_blank" class='icon'>
     <i class="fab fa-github icon"></i>
@@ -160,13 +161,15 @@
 
 
 
-	</div>
+
+    
+  </div>
 </main>
 
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-11-28 22:58:11.156372 -0500 EST m=&#43;0.292503341">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-11-28 22:58:11.154208 -0500 EST m=&#43;0.290340006">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 			<div class="container" style="padding-top: 5px; height: 200px; width: 71%;"></div>
 			
