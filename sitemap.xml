@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://michaelzhang.xyz/research/002-policy_divergence_personalized_meta-rl/</loc>
+    <lastmod>2019-11-28T17:40:08-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://michaelzhang.xyz/posts/017-this_is_fine/</loc>
     <lastmod>2019-11-05T20:15:15-05:00</lastmod>
   </url>
@@ -158,6 +163,12 @@
   <url>
     <loc>https://michaelzhang.xyz/tags/projects/</loc>
     <lastmod>2019-01-23T23:57:50-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://michaelzhang.xyz/research/</loc>
+    <lastmod>2019-11-28T17:40:08-05:00</lastmod>
     <priority>0</priority>
   </url>
   
