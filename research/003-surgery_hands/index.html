@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
-        Neural Machine Translation and Sequence-to-Sequence Models &middot; Michael Zhang
+        Using Computer Vision to Automate Hand Detection and Tracking of Surgeon Movements in Videos of Open Surgery &middot; Michael Zhang
     </title>
 
     
@@ -92,12 +92,12 @@
 <main>
 	<div class="post">
 		<div class="post-info">
-    <span>Updated</span><span> on&nbsp;</span><time datetime="2019-02-27 14:44:09 -0500 -0500">February 27, 2019</time>
+    <span>Updated</span><span> on&nbsp;</span><time datetime="2019-11-28 17:41:29 -0500 -0500">November 28, 2019</time>
         
 
     
 </div>
-		<h1 class="post-title">Neural Machine Translation and Sequence-to-Sequence Models</h1>
+		<h1 class="post-title">Using Computer Vision to Automate Hand Detection and Tracking of Surgeon Movements in Videos of Open Surgery</h1>
 <div class="post-line" style="padding-bottom: 16px"></div>
 
 
@@ -140,35 +140,6 @@
 
 		
 
-<p>What follows are personal notes and any possible insights to help me understand neural machine translation especially in the context of seq2seq models. All content credit goes to Graham Neubig and his tutorial <a href="https://arxiv.org/pdf/1703.01619.pdf">Neural Machine Translation and Sequence-to-sequence Models: A Tutorial</a> These were done as review for CS 287r.</p>
-
-<h2 id="n-gram-language-models">n-gram Language Models</h2>
-
-<p>The main issue with these is not being able to capture all possible sentence inputs? We can create a simple maximum likelihood estimator by calculating the probabilities for each word $e_t | e_{t-1}$, but this is only as strong as if we see these in previous training data examples. N-grams allow us to try to be a bit more flexible.</p>
-
-<!-- MORE TO COME HERE -->
-
-<h2 id="log-linear-language-models">Log-linear Language Models</h2>
-
-<p>We still want to calculate the probability of a word $e_t$ given context $e_{t-n+1}^{t-1}. However, we move towards more obviously-looking machine learning models by introducing <strong>features</strong>. We have some feature function $\phi(e_{t-n+1}^{t-1})$ that takes in context and outputs a real-valued <strong>feature vector</strong> $\bf x \in \mathbb{R}^N$, that describes the context with $N\$ different features.</p>
-
-<p>In addition to this, we want to use the features to predict probabilities over the output vocabulary $V$, for which we can calculate a score vector $\bf s \in \mathbb{R}^{|V|}$ that corresponds to the likelihood of each word. Looking at our model parameters $\theta$ a bit more explicitly now, we can sort them into those belonging to a <strong>bias vector</strong> $\bf b \in \mathbb{R}^|V|$ and a <strong>weight matrix</strong> $\bf W = \mathbb{R}^{|V| \times N}$. The bias vector tells us how likely a word is overall, and the weight matrix describes the relationship between feature values and scores. We accordingly end up with</p>
-
-<p>$$
-\bf s = W \bf x + \bf b
-$$</p>
-
-<p>We can then calculate the probabilities for which word to predict (remember our $\bf s$ vector size $= |V|$ = size of our vocab). The scores themselves are arbitrary values, but we just want to figure out in relation to any other word what the probability of our model picking that word should be. Doing this with a softmax activation function, we can then match these probabilities to our data using a <strong>negative log likelihood</strong> (NLL) loss function. We want to find parameters $\bf \theta $ such that the likelihood of our observed training data is maximized, which is the same as minimizing the negative log likelihood mathematically, but easier to calculate computationally.</p>
-
-<p>Some things we can do: adjust learning rate - learning rate decay to drop lr over time; early stopping - note when a model starts overfitting on training data nad stop training then.</p>
-
-<h2 id="neural-networks-and-feed-forward-language-models">Neural Networks and Feed-forward Language Models</h2>
-
-<p>Input embedding group representation?</p>
-
-<p>Neural networks have benefits of being able to learn non-linear representations of the input, which intuitively allow for the capacity to learn more meanings? Seems to be the case that we use embeddings which might learn multiple associations, then feed into standard network architecture.</p>
-
-
 		
 <div class="icons">
   <a href="https://github.com/mzio" target="_blank" class='icon'>
@@ -190,7 +161,7 @@ $$</p>
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-12-11 10:05:13.146741 -0800 PST m=&#43;0.163787416">2019</time>. Michael Zhang. H' 2020. 
+			&copy; <time datetime="2019-12-11 10:05:13.144482 -0800 PST m=&#43;0.161528932">2019</time>. Michael Zhang. H' 2020. 
 			</span>
 			<div class="container" style="padding-top: 5px; height: 200px; width: 71%;"></div>
 			
