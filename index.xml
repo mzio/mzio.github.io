@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>Characterizing Policy Divergence for Personalized Meta-Reinforcement Learning</title>
-      <link>https://michaelzhang.xyz/research/002-policy_divergence_personalized_meta-rl/</link>
-      <pubDate>Thu, 28 Nov 2019 17:41:29 -0500</pubDate>
-      
-      <guid>https://michaelzhang.xyz/research/002-policy_divergence_personalized_meta-rl/</guid>
-      <description>  </description>
-    </item>
-    
-    <item>
       <title>Using Computer Vision to Automate Hand Detection and Tracking of Surgeon Movements in Videos of Open Surgery</title>
       <link>https://michaelzhang.xyz/research/003-surgery_hands/</link>
       <pubDate>Thu, 28 Nov 2019 17:41:29 -0500</pubDate>
@@ -30,20 +21,20 @@
     </item>
     
     <item>
-      <title>Design and Assembly of CRISPR/Cas9-based Virus-like Particles for Programmable and Orthogonal Genetic Engineering in Mammalian Cells</title>
-      <link>https://michaelzhang.xyz/research/001-crispr_vlps/</link>
-      <pubDate>Thu, 28 Nov 2019 17:40:08 -0500</pubDate>
-      
-      <guid>https://michaelzhang.xyz/research/001-crispr_vlps/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>This is fine</title>
       <link>https://michaelzhang.xyz/posts/017-this_is_fine/</link>
       <pubDate>Tue, 05 Nov 2019 20:15:15 -0500</pubDate>
       
       <guid>https://michaelzhang.xyz/posts/017-this_is_fine/</guid>
+      <description>  </description>
+    </item>
+    
+    <item>
+      <title>Characterizing Policy Divergence for Personalized Meta-Reinforcement Learning</title>
+      <link>https://michaelzhang.xyz/research/002-policy_divergence_personalized_meta-rl/</link>
+      <pubDate>Tue, 01 Oct 2019 17:41:29 -0500</pubDate>
+      
+      <guid>https://michaelzhang.xyz/research/002-policy_divergence_personalized_meta-rl/</guid>
       <description>  </description>
     </item>
     
@@ -181,6 +172,15 @@ Part 1: Meeting the Group of 2018 SummerCamp is a community of Harvard interns 
       <guid>https://michaelzhang.xyz/posts/003-kinase-virus_analysis-post/</guid>
       <description>Source: Maillard Lab
 Kinases are pretty interesting to me. Sure I didn&amp;rsquo;t have the best introduction with them - as with most proteins, they were portrayed in AP Biology as either overly simple cartoon squiggly shapes or hopelessly complex ribbon / space-filling models, playing some large role in cell signaling with an equally large number of chemicals and sub-products to memorize. But over time I was able to see past these offenses to arrive at my current sentiment: kinases are kind of cool.</description>
+    </item>
+    
+    <item>
+      <title>Design and Assembly of CRISPR/Cas9-based Virus-like Particles for Programmable and Orthogonal Genetic Engineering in Mammalian Cells</title>
+      <link>https://michaelzhang.xyz/research/001-crispr_vlps/</link>
+      <pubDate>Sat, 28 May 2016 17:40:08 -0500</pubDate>
+      
+      <guid>https://michaelzhang.xyz/research/001-crispr_vlps/</guid>
+      <description></description>
     </item>
     
     <item>
