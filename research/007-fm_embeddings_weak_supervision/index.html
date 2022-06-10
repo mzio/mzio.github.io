@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140792770-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-140792770-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Shoring Up the Foundations: Fusing Model Embeddings and Weak Supervision &middot; Michael Zhang
+    </title>
+
+    
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="/css/life_contributions.css">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-mz.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-mz.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-mz.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Michael Zhang" />
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+</head>
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Michael Zhang</h2>
+				</a>
+				<ul>
+    <li><a href="/about">About</a></li>
+    <li><a href="/posts">Posts</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/">Home</a></li>
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Updated</span><span> on&nbsp;</span><time datetime="2021-08-12 12:23:39 -0700 PDT">August 12, 2021</time>
+        
+
+    
+</div>
+		<h1 class="post-title">Shoring Up the Foundations: Fusing Model Embeddings and Weak Supervision</h1>
+<div class="post-line" style="padding-bottom: 16px"></div>
+
+
+		
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+		<div style="margin-bottom: 2em">
+			<i></i>
+			
+		</div>
+		
+	    
+
+		
+
+		
+<div class="icons">
+  <a href="https://github.com/mzio" target="_blank" class='icon'>
+    <i class="fab fa-github icon"></i>
+  </a>
+  <a href="https://linkedin.com/in/michaelzhangxyz/" target="_blank" class='icon'>
+    <i class="fab fa-linkedin-in icon"></i>
+  </a>
+  <a href="mailto:michael_zhang@college.harvard.edu" class='icon'>
+    <i class="fas fa-envelope icon"></i>
+  </a>
+</div>
+
+
+
+	</div>
+</main>
+
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2022-06-09 18:19:44.647339 -0700 PDT m=&#43;0.299516527">2022</time>. Michael Zhang. H' 2020. 
+			</span>
+			<div class="container" style="padding-top: 5px; height: 200px; width: 71%;"></div>
+			
+			<script src="/js/life_contributions.js"></script>
+			<script src="/js/life_contributions_commits.js"></script>
+			<script type="text/javascript">
+				var now = moment().endOf('day').toDate();
+				var yearAgo = moment().startOf('day').subtract(1, 'year').toDate();
+				var graph = lifeContributions()
+				.data(commits)
+				.selector('.container')
+				.tooltipEnabled(true)
+				.onClick(function (data) {
+					console.log('data', data);
+				});
+				graph();  
+			</script>
+		</footer>
+
+    </body>
+</html>
