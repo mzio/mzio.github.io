@@ -12,6 +12,24 @@
     
     
     <item>
+      <title>Effectively Modeling Time Series with Simple Discrete State Spaces</title>
+      <link>https://michaelzhang.xyz/research/009-spacetime/</link>
+      <pubDate>Wed, 08 Mar 2023 23:40:22 -0800</pubDate>
+      
+      <guid>https://michaelzhang.xyz/research/009-spacetime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contrastive Adapters for Foundation Model Group Robustness</title>
+      <link>https://michaelzhang.xyz/research/008-contrastive_adapters/</link>
+      <pubDate>Wed, 08 Mar 2023 23:38:04 -0800</pubDate>
+      
+      <guid>https://michaelzhang.xyz/research/008-contrastive_adapters/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Correct-N-Contrast: a Contrastive Approach for Improving Robustness to Spurious Correlations</title>
       <link>https://michaelzhang.xyz/research/005-correct_n_contrast/</link>
       <pubDate>Thu, 09 Jun 2022 14:07:59 -0700</pubDate>
