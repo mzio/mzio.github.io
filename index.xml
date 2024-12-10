@@ -12,6 +12,33 @@
     
     
     <item>
+      <title>LoLCATs: On Low-Rank Linearizing of Large Language Models</title>
+      <link>https://michaelzhang.xyz/research/012-lolcats/</link>
+      <pubDate>Mon, 14 Oct 2024 23:40:22 -0800</pubDate>
+      
+      <guid>https://michaelzhang.xyz/research/012-lolcats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>(Based) Simple linear attention language models balance the recall-throughput tradeoff</title>
+      <link>https://michaelzhang.xyz/research/011-based/</link>
+      <pubDate>Wed, 28 Feb 2024 23:40:22 -0800</pubDate>
+      
+      <guid>https://michaelzhang.xyz/research/011-based/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Hedgehog &amp; the Porcupine: Expressive Linear Attentions with Softmax Mimicry</title>
+      <link>https://michaelzhang.xyz/research/010-hedgehog/</link>
+      <pubDate>Tue, 06 Feb 2024 23:40:22 -0800</pubDate>
+      
+      <guid>https://michaelzhang.xyz/research/010-hedgehog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Effectively Modeling Time Series with Simple Discrete State Spaces</title>
       <link>https://michaelzhang.xyz/research/009-spacetime/</link>
       <pubDate>Wed, 08 Mar 2023 23:40:22 -0800</pubDate>

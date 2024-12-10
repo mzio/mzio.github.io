@@ -6,10 +6,37 @@
     <description>Recent content in Researches on Michael Zhang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Mar 2023 23:40:22 -0800</lastBuildDate>
+    <lastBuildDate>Mon, 14 Oct 2024 23:40:22 -0800</lastBuildDate>
     
 	<atom:link href="https://michaelzhang.xyz/research/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LoLCATs: On Low-Rank Linearizing of Large Language Models</title>
+      <link>https://michaelzhang.xyz/research/012-lolcats/</link>
+      <pubDate>Mon, 14 Oct 2024 23:40:22 -0800</pubDate>
+      
+      <guid>https://michaelzhang.xyz/research/012-lolcats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>(Based) Simple linear attention language models balance the recall-throughput tradeoff</title>
+      <link>https://michaelzhang.xyz/research/011-based/</link>
+      <pubDate>Wed, 28 Feb 2024 23:40:22 -0800</pubDate>
+      
+      <guid>https://michaelzhang.xyz/research/011-based/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Hedgehog &amp; the Porcupine: Expressive Linear Attentions with Softmax Mimicry</title>
+      <link>https://michaelzhang.xyz/research/010-hedgehog/</link>
+      <pubDate>Tue, 06 Feb 2024 23:40:22 -0800</pubDate>
+      
+      <guid>https://michaelzhang.xyz/research/010-hedgehog/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Effectively Modeling Time Series with Simple Discrete State Spaces</title>
